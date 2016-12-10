@@ -1,0 +1,28 @@
+extends adminLayout
+
+block content
+  form(method='post', action='/admin/add')
+    h4 Add Newsletter 
+    |         
+    .large-8.columns
+      label Name
+      input(type='text', name='name', placeholder='Name')
+    |         
+    .large-8.columns
+      label Category
+      select(name='category' id='categorySelector')
+        each category, i in categories
+          option(value=category._id) #{category.name}
+    |         
+    .large-8.columns
+      label Subcategory
+      select(name='subcategory' id='subCategorySelector')
+        each subcategory, i in subcategories
+          option(value=subcategory._id, data-id=subcategory.category) #{subcategory.name}
+    |         
+    .large-8.columns
+      label Website
+      input(type='text', name='website', placeholder='URL')
+    |         
+    .large-8.columns
+      button.success.button(type='submit') Save

@@ -1,0 +1,18 @@
+extends adminLayout
+
+block content 
+  form(method='post', action='/admin/subcategories/add')
+    h2 Add Sub Category 
+    |         
+    .large-8.columns
+      label Name
+      input(type='text', name='name', placeholder='Name')
+    |                          
+    .large-8.columns
+      label Category
+      select(name='category')
+        each category, i in categories
+          option(value=category._id) #{category.name}
+    |         
+    .large-8.columns
+      button.success.button(type='submit') Save

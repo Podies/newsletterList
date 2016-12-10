@@ -1,0 +1,47 @@
+doctype html(lang='en')
+head
+    meta(charset='utf-8')
+    |         
+    title newsletter
+    |     
+    |         
+    link(rel='stylesheet', href='/stylesheets/app.css')
+    |         
+    link(rel='stylesheet', href='/stylesheets/foundation.css')
+    |         
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  |     
+body
+  .row
+    .large-12.columns
+      h1 Newsletter
+  |         
+  .row
+    .large-12.columns
+      nav.top-bar(data-topbar='', role='navigation')
+        section.top-bar-section
+          ul.menu
+            li
+              a(href='/admin') Dashboard
+            |                             
+            li
+              a(href='/admin/categories') Categories
+            |                             
+            li
+              a(href='/admin/subcategories') Subcategories
+  |         
+  .row
+    .large-12.columns
+      block content
+  |     
+  |         
+  script(data-main='/javascripts/app', src='/requirejs/require.js')
+  |         
+  script(type='text/javascript', src='/javascripts/jquery.js')
+  |         
+  script(type='text/javascript', src='/javascripts/foundation.js')
+  |         
+  script(type='text/javascript', src='/javascripts/main.js')
+  |         
+  script.
+    $(document).foundation();
