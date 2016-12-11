@@ -1,6 +1,49 @@
 @import 'breakpoint';
 @import "vars/**";
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
 $font-size: 1.2em;
 $font-weight: 600;
 $color: #F15B2E;
@@ -44,56 +87,61 @@ $color: #F15B2E;
 
 header {
 	background: #1a051e;
-	z-index: 1000;
+	z-index: 7000;
 	box-shadow: 0 1px 10px rgba(0,0,0,0.2);
 	position: fixed;
 	width: 100%;
-	.primary-nav {
-		display: flex;
-		align-items: center;
-		height: 4em;
-		.brand {
-			padding: 1em;
-			padding-left: 0;
-			a {
-				text-decoration: none;
-				color: #F15B2E;
-			}
-		}
-		.right-content {
+	.main-header {
+    margin-top:0;
+    margin-bottom: 0;
+    padding: 0;
+		.primary-nav {
 			display: flex;
-			justify-content: flex-end;
 			align-items: center;
-			input {
-				padding: 0.6em;
+			height: 4em;
+			.brand {
+				padding: 1em;
+				padding-left: 0;
+				a {
+					text-decoration: none;
+					color: #F15B2E;
+				}
 			}
-			a {
-				@include button;
-				margin-left: 1em;
-				display: inline-block;
-				transform: perspective(1px);
-				position: relative;
-				transition-duration: 300ms;
-				&:before {
-					content: "";
-					position: absolute;
-					z-index: -1;
-					top: 0;
-					bottom: 0;
-					left: 0;
-					right: 0;
-					background-color:#F15B2E ;
-					transform: scaleX(0);
-					transition-property: transform;
+			.right-content {
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+				.search {
+					padding: 0.6em;
+				}
+				a {
+					@include button;
+					margin-left: 1em;
+					display: inline-block;
+					transform: perspective(1px);
+					position: relative;
 					transition-duration: 300ms;
-					transition-timing-function: ease-out; 
-				}
-				&:hover, :focus, :active {
-					color: white;
-				}
+					&:before {
+						content: "";
+						position: absolute;
+						z-index: -1;
+						top: 0;
+						bottom: 0;
+						left: 0;
+						right: 0;
+						background-color:#F15B2E ;
+						transform: scaleX(0);
+						transition-property: transform;
+						transition-duration: 300ms;
+						transition-timing-function: ease-out; 
+					}
+					&:hover, :focus, :active {
+						color: white;
+					}
 
-				&:hover:before, :focus:before, :active:before {
-					transform: scaleX(1);
+					&:hover:before, :focus:before, :active:before {
+						transform: scaleX(1);
+					}
 				}
 			}
 		}
@@ -110,11 +158,9 @@ header {
 		list-style-type: none;
 		background-color: white;
 		margin: 0;
-		padding: 1em;
 		display: table;
 		.category-tab {
-			margin-top: 1.6%;
-			margin-right: 1.4em;
+      margin: 0.8em;
 			position: relative;
 			display: inline-block;
 			.category-name {
@@ -192,11 +238,35 @@ header {
 	}
 }
 
+#sidebartoggler {
+	display: none;
+}
+
+.toggle {
+	display: none;
+	position: fixed;
+	font-size: 2em;
+	padding: 5px 8px;
+	color: #F15B2E;
+	z-index: 10000;
+	top: 4px;
+	left: 10px;
+	&:hover {
+		cursor: pointer;
+    background-color: white;
+	}
+}
+
+.page-wrap {
+	margin-top: 0;
+}
+
 .sidebar {
 	background:white;
 	height: 100%;
 	margin-top: 8.2%;
 	box-shadow: 1px 0 10px rgba(0,0,0,0.1);
+	z-index: 5000;
 	.nav-bar {
 		list-style-type: none;
 		margin:0;
@@ -305,6 +375,10 @@ header {
 					justify-content: space-between;
 					align-items: center;
           .tag-details {
+          	display: flex;
+				    height: 36px;
+				    flex-direction: column;
+				    justify-content: space-between;
 						.tag-1 {
 							color: #712c7f;
 							font-weight: 600;
