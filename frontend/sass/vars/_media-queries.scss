@@ -1,12 +1,47 @@
+
 @media all and (min-width: 320px) {
    @for $i from 1 through 12 {
      .col-wd-#{$i} {width: (8.3334% * $i);}
    }
+   body {
+		font-size: 0.85em;
+		.hero-banner {
+      margin-top: 9%;
+		}
+	}
+}
+
+@media all and (min-width: 420px) {
+	body {
+		.hero-banner {
+			margin-top: 6%;
+		}
+		font-size: 0.8em;
+		.category-details {
+			margin-top: 12%;
+		}
+		.sidebar {
+			margin-top: 8.6%;
+		}
+	}
 }
 
 @media all and (min-width: 768px) {
 	@for $i from 1 through 12 {
 		.col-md-#{$i} {width: (8.3334% * $i);}
+	}
+
+	body {
+		font-size: 0.9em;
+		.hero-banner {
+			margin-top: 5%;
+		}
+		.category-details {
+			margin-top: 6%;
+		}
+		.sidebar {
+			margin-top: 6%;
+		}
 	}
 }
 
@@ -14,13 +49,47 @@
 	@for $i from 1 through 12 {
 		.col-sm-#{$i} {width: (8.3334% * $i);}
 	}
+
+	body {
+		font-size: 1em;
+		.hero-banner {
+			margin-top: 4%;
+		}
+		.main-body {
+			.categories {
+				.category-tab {
+					.sub-category-list {
+						width: 414px;
+					}
+				}
+			}
+			margin-top: 28%;
+		}
+		.sidebar {
+			margin-top: 4.8% !important;
+		}
+	}
 }
 
 @media all and (min-width: 1350px) {
 	@for $i from 1 through 12 {
 		.col-xs-#{$i} {width: (8.3334% * $i);}
 	}
-	.main-body {
-		margin-top: 25% !important;
+	body {
+		.sidebar {
+			margin-top: 4% !important;
+		}
+		.category-details {
+			margin-top: 4%;
+		}
+    .main-body {
+    	.categories {
+    		.category-tab {
+    			.sub-category-list {
+    				width: 551px;
+    			}
+    		}
+    	}
+    }
 	}
 }
