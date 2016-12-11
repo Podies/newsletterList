@@ -43,7 +43,6 @@ table {
 	border-spacing: 0;
 }
 
-
 $font-size: 1.2em;
 $font-weight: 600;
 $color: #F15B2E;
@@ -63,17 +62,6 @@ $color: #F15B2E;
 	}
 	100% {
 		transform: scale(1);
-		opacity: 1;
-	}
-}
-
-@keyframes drop-down {
-	0% {
-		transform: translate(0,-20px);
-		opacity: 0;
-	}
-	100% {
-		transform: translate(0,0);
 		opacity: 1;
 	}
 }
@@ -118,7 +106,6 @@ header {
 					@include button;
 					margin-left: 1em;
 					display: inline-block;
-					transform: perspective(1px);
 					position: relative;
 					transition-duration: 300ms;
 					&:before {
@@ -266,35 +253,34 @@ header {
 	height: 100%;
 	margin-top: 8.2%;
 	box-shadow: 1px 0 10px rgba(0,0,0,0.1);
-	z-index: 5000;
+	z-index: 8000;
 	.nav-bar {
 		list-style-type: none;
 		margin:0;
 		padding: 0;
 		text-align: center;
 		.category-name {
+			position: relative;
 			margin:0;
-			animation: {
-        name: drop-down;
-        duration: 400ms;
-        timing-function: cubic-bezier(.02,.01,.47,1);
-        fill-mode: forwards;
-      }
-			&:last-of-type {
-				border-bottom: none;
-			}
 			font-size: 1em;
 			font-weight: 300;
+			transition: all 400ms cubic-bezier(.02,.01,.47,1);
 			.sub-category-list {
-				background-color: (#200725-10);
+				z-index: 9000;
+				position: absolute;
+				left: 100%;
+				background-color: rgba(22,0,27,0.97);
 				list-style-type: none;
 				display: none;
+				box-shadow: 2px 2px 40px rgba(0,0,0,0.7);
+				transform-origin: top left;
 				li {
 					a {
 						padding: 1.4em 0;
 						text-decoration: none;
 						color: #999999;
-						font-size: 0.9em;
+						font-size: 1em;
+						font-weight: 400;
 						&:hover {
 							background-color: #e6e5e6;
 							font-weight: 700;
@@ -308,26 +294,33 @@ header {
 				text-decoration: none;
 				padding: 1.4em 0;
 				font-weight: 600;
-				transition:all 250ms cubic-bezier(.02,.01,.47,1);
+				background-color: white;
+				transition: all 500ms cubic-bezier(.02,.01,.47,1);
+				&:hover {
+					color: white;
+					background-color: #F15B2E;
+					font-weight: 400;
+					font-size: 1em;
+					transition: all 500ms cubic-bezier(.02,.01,.47,1);
+				}
 			}
 			&:hover .sub-category-list {
         display: block;
         margin-bottom: 0;
         animation: {
-          name: drop-down;
+          name: appear;
           duration: 400ms;
           timing-function: cubic-bezier(.02,.01,.47,1);
           fill-mode: forwards;
         }
 			}
-			&:hover .category-link {
-				color: white;
-				background-color: #F15B2E;
-				font-weight: 700;
-			}
-			&:hover {
-				background-color: #ffffff;
-			}
+			// &:hover .category-link {
+			// 	color: white;
+			// 	background-color: #F15B2E;
+			// 	font-weight: 500;
+			// 	font-size: 1em;
+			// 	transition: all 400ms cubic-bezier(.02,.01,.47,1);
+			// }
 		}
 	}
 }
