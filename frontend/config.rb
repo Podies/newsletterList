@@ -8,5 +8,5 @@ css_dir ="css"
 images_dir ="img"
 line_comments = false
 preferred_syntax = :scss
-output_style = :expanded
+output_style = :compressed
 relative_assets = true
