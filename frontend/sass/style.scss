@@ -66,6 +66,17 @@ $color: #F15B2E;
 	}
 }
 
+@keyframes card-appear {
+	0% {
+		transform: translateY(200px);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
 .hero-banner {
   position: absolute;
   margin: 4% 0 0 -50%;
@@ -75,7 +86,7 @@ $color: #F15B2E;
 
 header {
 	background: #1a051e;
-	z-index: 7000;
+	z-index: 8500;
 	box-shadow: 0 1px 10px rgba(0,0,0,0.2);
 	position: fixed;
 	width: 100%;
@@ -185,7 +196,7 @@ header {
 			  	z-index:2000;
 		    }
 		  }
-		  .sub-category-list {
+		  .sub-category-list-right {
 		  	width: 150px;
 		  	list-style-type: none;
 		  	position: absolute;
@@ -213,8 +224,12 @@ header {
 			  	}
 			  }
 		  }
+		  .sub-category-list-left {
+		  	@extend .sub-category-list-right;
+		  	right: 0;
+		  }
 		  
-		  &:hover .sub-category-list {
+		  &:hover .sub-category-list-right {
 		  	display: flex;
 		  	flex-wrap: wrap;
 		  }
@@ -250,7 +265,6 @@ header {
 
 .sidebar {
 	background:white;
-	height: 100%;
 	margin-top: 8.2%;
 	box-shadow: 1px 0 10px rgba(0,0,0,0.1);
 	z-index: 8000;
@@ -265,7 +279,7 @@ header {
 			font-size: 1em;
 			font-weight: 300;
 			transition: all 400ms cubic-bezier(.02,.01,.47,1);
-			.sub-category-list {
+			.sub-category-list-up {
 				z-index: 9000;
 				position: absolute;
 				left: 100%;
@@ -289,6 +303,11 @@ header {
 					}
 				}
 			}
+			.sub-category-list-down {
+				@extend .sub-category-list-up;
+				transform-origin: bottom left;
+				bottom: 0;
+			}
 			.category-link {
 				color:#F15B2E ;
 				text-decoration: none;
@@ -304,7 +323,7 @@ header {
 					transition: all 500ms cubic-bezier(.02,.01,.47,1);
 				}
 			}
-			&:hover .sub-category-list {
+			&:hover .sub-category-list-up {
         display: block;
         margin-bottom: 0;
         animation: {
@@ -314,13 +333,6 @@ header {
           fill-mode: forwards;
         }
 			}
-			// &:hover .category-link {
-			// 	color: white;
-			// 	background-color: #F15B2E;
-			// 	font-weight: 500;
-			// 	font-size: 1em;
-			// 	transition: all 400ms cubic-bezier(.02,.01,.47,1);
-			// }
 		}
 	}
 }
@@ -411,6 +423,14 @@ header {
 				flex-direction: column;
 				justify-content: space-between;
 				margin-top: 9%;
+				line-height: 1.2em;
+				letter-spacing: 0.02em;
+				animation: {
+					name: card-appear;
+					duration: 800ms;
+					timing-function: cubic-bezier(0, 0, 0, 0.93);
+					fill-mode: forwards;
+				}
 				h2 {
 					text-align: center;
 					color: #F15B2E;
