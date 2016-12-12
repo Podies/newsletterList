@@ -93,17 +93,29 @@ header {
 	.main-header {
     margin-top:0;
     margin-bottom: 0;
-    padding: 0;
 		.primary-nav {
 			display: flex;
 			align-items: center;
 			height: 4em;
 			.brand {
-				padding: 1em;
-				padding-left: 0;
-				a {
-					text-decoration: none;
-					color: #F15B2E;
+				.brand-name {
+					width: 70%;
+				  display: flex;
+				  justify-content:flex-start;
+				  align-items: flex-end;
+				  text-decoration: none;
+				  img {
+				  	width: 30%;
+				  	height: auto;
+				  }
+				  span {
+				  	margin-left: 0.6em;
+				  	font-size: 1.2em;
+				  	color: #F15B2E;
+				  	font-weight: 500;
+				  	line-height: 1.2em;
+				  	letter-spacing: 0.04em;
+				  }
 				}
 			}
 			.right-content {
