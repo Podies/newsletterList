@@ -503,7 +503,7 @@ header .main-header .primary-nav .right-content {
   align-items: center;
 }
 header .main-header .primary-nav .right-content .search {
-  padding: 0.6em;
+  padding: 6px;
 }
 header .main-header .primary-nav .right-content .submit-btn {
   font-size: 1em;
