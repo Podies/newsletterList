@@ -1,11 +1,11 @@
-import * as fetch from './ajaxFetch';
-import * as action from './action';
+import * as api from './ajaxCalls';
+import * as actions from './actions';
 
-const fetchCategory = (data) => {
+const fetchCategory = () => {
   return(dispatch) => {
-    return fetch.ajaxFetchCategory(data).then
-      ((res) => {
-        dispatch(action.addCategory(res.categories))
+    return api.ajaxFetchCategory().then
+      ((responseData) => {
+        dispatch(action.addCategory(responseData.categories))
       },
       (err) => {
         dispatch(action.updateFailed(err));
@@ -14,11 +14,11 @@ const fetchCategory = (data) => {
   };
 };
 
-const fetchSubCategory = (data) => {
+const fetchSubCategory = () => {
   return(dispatch) => {
-    return fetch.ajaxFetchSubCategory(data).then
-      ((res) => {
-        dispatch(action.addSubCategory(res.subcategories))
+    return api.ajaxFetchSubCategory().then
+      ((responseData) => {
+        dispatch(action.addSubCategory(responseData.subcategories))
       },
       (err) => {
         dispatch(action.updateFailed(err));

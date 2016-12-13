@@ -4,6 +4,11 @@ import CategoryList from './CategoryList';
 import * as actions from '../actions';
 
 class Landing extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div className="container">
@@ -15,11 +20,6 @@ class Landing extends React.Component {
   }
 }
 
-Landing.need = [() => {
-  return actions.fetchCategory();
-}];
-Landing.need = [() => {
-  return actions.fetchSubCategory();
-}];
+Landing.need = [() => actions.fetchCategory()];
 
 export default Landing;

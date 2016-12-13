@@ -19,7 +19,7 @@ router.get('/newsletter', function(req, res) {
 });
 
 router.get('/categories', function(req, res) {
-  Category.find({}).exec(function(err, categories) {
+  Category.find({}).populate('subcategories', 'name').exec(function(err, categories) {
     if(err) {
       console.log(err);
     }

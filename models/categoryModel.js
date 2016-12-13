@@ -6,6 +6,7 @@ var Schema = mongoose.Schema
 var categorySchema = Schema({
   name: String,
   className: String,
+  subcategories: [{ type: Schema.Types.ObjectId, ref: 'Subcategory' }]
 });
 
 

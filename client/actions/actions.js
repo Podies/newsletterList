@@ -5,6 +5,7 @@ const addCategory = (data) => {
   };
 };
 const addSubCategory = (data) => {
+  console.log('called in action')
   return {
     type: 'UPDATE_SUB_CATEGORY',
     data
@@ -18,5 +19,5 @@ const updateFailed = (data) => {
 };
 
 export {
-  addCategory, updateFailed,
+  addCategory, updateFailed, addSubCategory
 };

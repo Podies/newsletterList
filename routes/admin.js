@@ -103,8 +103,13 @@ router.post('/subcategories/add', function(req, res) {
   var newSubcategory = new Subcategory({ name: name, category: category });
 
   newSubcategory.save(function(err, savedSubcategory){
-    console.log(err, savedSubcategory);
+    
     res.redirect('/admin/subcategories');
+
+    Category.findOneAndUpdate(
+      {_id: savedSubcategory.category},
+      {$push: {subcategories: savedSubcategory._id}}
+    ).exec();
   })
 });
 
