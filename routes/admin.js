@@ -93,8 +93,8 @@ router.get('/subcategories/add', function(req, res) {
 });
 
 router.post('/subcategories/add', function(req, res) {
-  var name = req.body.name;
-  var category = req.body.category;
+  var name = req.body.name || "" ;
+  var category = req.body.category || "" ;
 
   if(!name || !category) {
     return res.status(400).send({ message: 'Not Proper Data Sent.' });
