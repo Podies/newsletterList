@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import Category from './Category';
+import NewsletterGrid from './NewsletterGrid'
 
 class CategoryList extends Component {
   constructor(props) {
     super(props);
   }
-
+  
   render() {
     return (
       <div className="main-body col-wd-12">
@@ -17,6 +18,7 @@ class CategoryList extends Component {
             }
           </ul>
         </div>
+        <NewsletterGrid {...this.props.newsletters}/>
       </div>
     )
   }

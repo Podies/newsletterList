@@ -6,9 +6,10 @@ import { Route, IndexRoute } from 'react-router';
 import CategoryPage from './components/CategoryPage';
 
 export default (
-  <Route path="/" component={App}>
+  <Route component={App} path="/" >
     <IndexRoute component={Landing} />
-    <Route path="category" component={CategoryPage} />
-    <Route path="*" component={NotFoundPage} />
+    <Route component={CategoryPage} path=":category" />
+    <Route component={CategoryPage} path=":category/:subcategory" />
+    <Route component={NotFoundPage} path="*" />
   </Route>
 );

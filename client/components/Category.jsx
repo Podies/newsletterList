@@ -1,17 +1,28 @@
 import React from 'react';
-import SubCategory from './SubCategory';
+import { Link } from 'react-router';
 import * as actions from '../actions/index';
 
 class Category extends React.Component{
   render() {
+    const { category } = this.props;
     return(
       <li className="category-tab">
-        <a href="#" className="category-name">
-          <i className={`fa fa-${this.props.category.className}`} aria-hidden="true"></i>
-          <p>{this.props.category.name}</p>
-          <span className="triangle"></span>
-        </a>
-        <SubCategory />
+        <Link to={`/${category.name}`} className="category-name">
+          <i className={`fa fa-${category.className}`} aria-hidden="true"></i>
+          <p>{category.name}</p>
+          <span className="triangle"></span>      
+        </Link>
+          <ul className="sub-category-list-right">
+            {
+              category.subcategories.map((subcategory, i) => (
+                <li key={i}>
+                  <Link to={`${category.name}/${subcategory.name}`} className="sub-category">
+                    {subcategory.name}
+                  </Link>
+                </li>
+              ))
+            }
+          </ul>
       </li>
     )
   }

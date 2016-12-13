@@ -5,28 +5,28 @@ const fetchCategory = () => {
   return(dispatch) => {
     return api.ajaxFetchCategory().then
       ((responseData) => {
-        dispatch(action.addCategory(responseData.categories))
+        dispatch(actions.addCategory(responseData.categories))
       },
       (err) => {
-        dispatch(action.updateFailed(err));
+        dispatch(actions.updateFailed(err));
       }
     );
   };
 };
 
-const fetchSubCategory = () => {
+const fetchNewsletters = () => {
   return(dispatch) => {
-    return api.ajaxFetchSubCategory().then
+    return api.ajaxFetchNewsletters().then
       ((responseData) => {
-        dispatch(action.addSubCategory(responseData.subcategories))
+        dispatch(actions.addNewsletters(responseData.newsletters))
       },
       (err) => {
-        dispatch(action.updateFailed(err));
+        dispatch(actions.updateFailed(err));
       }
     );
   };
 };
 
 export  {
-  fetchCategory, fetchSubCategory
+  fetchCategory, fetchNewsletters
 }
