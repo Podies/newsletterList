@@ -93,8 +93,8 @@ router.get('/subcategories/add', function(req, res) {
 });
 
 router.post('/subcategories/add', function(req, res) {
-  var name = req.body.name;
-  var category = req.body.category;
+  var name = req.body.name || "" ;
+  var category = req.body.category || "" ;
 
   if(!name || !category) {
     return res.status(400).send({ message: 'Not Proper Data Sent.' });
@@ -103,8 +103,13 @@ router.post('/subcategories/add', function(req, res) {
   var newSubcategory = new Subcategory({ name: name, category: category });
 
   newSubcategory.save(function(err, savedSubcategory){
-    console.log(err, savedSubcategory);
+    
     res.redirect('/admin/subcategories');
+
+    Category.findOneAndUpdate(
+      {_id: savedSubcategory.category},
+      {$push: {subcategories: savedSubcategory._id}}
+    ).exec();
   })
 });
 
