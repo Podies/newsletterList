@@ -1,0 +1,30 @@
+extends adminLayout
+
+block content
+  h3 Welcome to Newsletter
+  a.success.button(href='/admin/add')  Add Newsletter
+  table
+    thead
+        tr
+          th(width='200') Id
+          |       
+          th(width='150') Name
+          |       
+          th(width='150') website
+          |       
+          th(width='150') Category
+          |       
+          th(width='150') Subcategory
+    |   
+    tbody
+      each newsletter, i in newsletters
+        tr
+          td #{newsletter._id}
+          |       
+          td #{newsletter.name}
+          |       
+          td #{newsletter.website}
+          |       
+          td #{newsletter.category.name}
+          |       
+          td #{newsletter.subcategory.name}

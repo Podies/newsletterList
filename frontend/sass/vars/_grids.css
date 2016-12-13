@@ -1,0 +1,24 @@
+.grid {
+  width: 100%;
+  max-width: 1520px;
+  margin: 0 auto; }
+
+[class*="col-"] {
+  width: 100%;
+  float: left;
+  min-height: 1px; }
+
+.grid:before,
+.row:before,
+.grid:after,
+.row:after {
+  content: "";
+  display: table; }
+
+.grid:after,
+.row:after {
+  clear: both; }
+
+.col {
+  padding: 0 8px 0 8px;
+  margin: 10px; }

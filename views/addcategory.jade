@@ -1,0 +1,19 @@
+extends adminLayout
+
+block content 
+  form(method='post', action='/admin/categories/add')
+    h2 Add Category 
+    |         
+    .large-8.columns
+      label Name
+      input(type='text', name='name', placeholder='Name')
+    |                          
+    .large-8.columns
+      label Class
+      input(type='text', name='class', placeholder='Glyphicon Class')
+    .large-8.columns
+      label Password
+      input(type='password', name='password', placeholder='Password')
+    |   
+    .large-8.columns
+      button.success.button(type='submit') Save

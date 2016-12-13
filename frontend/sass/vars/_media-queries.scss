@@ -1,0 +1,247 @@
+@media all and (max-width: 420px) {
+	.brand {
+		a {
+			margin-left: 28px;
+		}
+	}
+  .toggle {
+  	display: inline !important;
+  }
+	.sidebar {
+		position: absolute;
+		width: 44% !important;
+		margin-top: 0.9% !important;
+		left: -240px;
+		top: 50px;
+		transition: all 300ms ease-in;
+		box-shadow: 2px 2px 30px rgba(0,0,0,0.4) !important;
+	}
+	header {
+			.main-header {
+				.primary-nav {
+					.brand {
+						.brand-name {
+							img {
+								width: 85% !important;
+							}
+						}
+					}
+				}
+			}
+		}
+
+	#sidebartoggler {
+		&:checked + .page-wrap {
+			.sidebar {
+				left: 0px;
+			}
+		}
+	}
+	.category-details {
+		width: 100% !important;
+		.nav-details {
+			margin-top: 12% !important;
+			.subcategory-page-tag {
+				span {
+					font-size: 1.1em !important;
+				}
+			}
+		}
+		.card-row {
+			.newsletter-card {
+				margin-top: 2% !important;
+			}
+		}
+	}
+}
+
+@media all and (min-width: 320px) {
+   @for $i from 1 through 12 {
+     .col-wd-#{$i} {width: (8.3334% * $i);}
+   }
+   body {
+		font-size: 0.85em;
+		.hero-banner {
+      margin-top: 9%;
+		}
+		header {
+			.main-header {
+				.primary-nav {
+					.brand {
+						.brand-name {
+							img {
+								width: 40%;
+							}
+							span {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 420px) {
+	body {
+		.hero-banner {
+			margin-top: 6%;
+		}
+		font-size: 0.8em;
+		header {
+			.main-header {
+				.primary-nav {
+					.brand {
+						.brand-name {
+							img {
+								width: 60%;
+							}
+						}
+					}
+				}
+			}
+		}
+		.category-details {
+			margin-top: 8%;
+			.nav-details {
+				.subcategory-page-tag {
+					span {
+						font-size: 1.2em !important;
+					}
+				}
+			}
+		}
+		.sidebar {
+			margin-top: 6.6%;
+		}
+	}
+}
+
+@media all and (min-width: 768px) {
+	@for $i from 1 through 12 {
+		.col-md-#{$i} {width: (8.3334% * $i);}
+	}
+
+	body {
+		font-size: 0.9em;
+		.hero-banner {
+			margin-top: 5%;
+		}
+		.category-details {
+			margin-top: 8%;
+		}
+		.sidebar {
+			margin-top: 7%;
+		}
+		header {
+			.main-header {
+				.primary-nav {
+					.brand {
+						.brand-name {
+							img {
+								width: 25%;
+							}
+							span {
+								display: inline-block;
+								font-size: 0.9em !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media all and (min-width: 960px) {
+	@for $i from 1 through 12 {
+		.col-sm-#{$i} {width: (8.3334% * $i);}
+	}
+
+	body {
+		font-size: 1em;
+		.hero-banner {
+			margin-top: 4%;
+		}
+		header {
+			.main-header {
+				.primary-nav {
+					.brand {
+						.brand-name {
+							img {
+								width: 25%;
+							}
+							span {
+								font-size: 1em !important;
+							}
+						}
+					}
+				}
+			}
+		}
+		.main-body {
+			.categories {
+				.category-tab {
+					.sub-category-list-right {
+						width: 414px;
+					}
+				}
+			}
+			margin-top: 28%;
+		}
+		.sidebar {
+			margin-top: 4.8% !important;
+		}
+	}
+}
+
+@media all and (min-width: 1350px) {
+	@for $i from 1 through 12 {
+		.col-xs-#{$i} {width: (8.3334% * $i);}
+	}
+	body {
+		.sidebar {
+			margin-top: 4% !important;
+		}
+		header {
+			.main-header {
+				.primary-nav {
+					.brand {
+						.brand-name {
+							width: 70%;
+						  display: flex;
+						  justify-content:flex-start;
+						  align-items: flex-end;
+						  text-decoration: none;
+						  img {
+						  	width: 30%;
+						  	height: auto;
+						  }
+						  span {
+						  	margin-left: 0.6em;
+						  	font-size: 1.2em !important;
+						  	color: #F15B2E;
+						  	font-weight: 500;
+						  	line-height: 1.2em;
+						  	letter-spacing: 0.04em;
+						  }
+						}
+					}
+				}
+			}
+		}
+		.category-details {
+			margin-top: 4%;
+		}
+    .main-body {
+    	.categories {
+    		.category-tab {
+    			.sub-category-list-right {
+    				width: 551px;
+    			}
+    		}
+    	}
+    }
+	}
+}

@@ -1,0 +1,19 @@
+extends adminLayout
+
+block content
+  h3 Categories
+  a.success.button(href='/admin/categories/add')  Add Category
+  table
+      thead
+          tr
+            th(width='200') Id
+            |       
+            th(width='150') Name
+            |       
+            th(width='150') class
+      tbody
+        each category, i in categories
+          tr
+            td #{category._id}
+            td #{category.name}
+            td #{category.className}
