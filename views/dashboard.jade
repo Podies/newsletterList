@@ -15,6 +15,8 @@ block content
           th(width='150') Category
           |       
           th(width='150') Subcategory
+          |       
+          th(width='150') DELETE
     |   
     tbody
       each newsletter, i in newsletters
@@ -28,3 +30,5 @@ block content
           td #{newsletter.category.name}
           |       
           td #{newsletter.subcategory.name}
+          td 
+            a.tiny.alert.button.removeNewsletter(data-id=newsletter._id, href='#') Delete

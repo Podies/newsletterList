@@ -3,6 +3,7 @@ var router = express.Router();
 var Newsletter = require('../models/newsletterModel');
 var Category = require('../models/categoryModel');
 var Subcategory = require('../models/subCategory');
+var HandPicked = require('../models/handPicked');
 
 
 function verifyPassword(req, res, next) {
@@ -15,6 +16,7 @@ function verifyPassword(req, res, next) {
   next();
 }
 
+
 /* GET users listing. */
 router.get('/', function(req, res) {
   Newsletter.find({}).populate('category subcategory').exec(function(err, newsletters) {
@@ -24,7 +26,6 @@ router.get('/', function(req, res) {
     var model = {
       newsletters: newsletters
     }
-    console.log(model, 'model')
     res.render('dashboard', model);
   })
 });
@@ -49,6 +50,7 @@ router.get('/add', function(req, res) {
 
 router.post('/add', function(req, res) {
   var name = req.body.name;
+  var description = req.body.description;
   var category = req.body.category;
   var subcategory = req.body.subcategory;
   var website = req.body.website;
@@ -58,6 +60,7 @@ router.post('/add', function(req, res) {
   }
   var newNewsletter = new Newsletter({
     name: name,
+    description: description,
     category: category,
     subcategory: subcategory,
     website: website 
@@ -66,6 +69,16 @@ router.post('/add', function(req, res) {
     console.log(err, savedNewsletter);
     res.redirect('/admin');
   })
+});
+
+  // Delete Newsletter
+router.delete('/delete/:id', function(req,res) {
+    Newsletter.remove({_id: req.params.id}, function(err) {
+        if(err) {
+            console.log(err);
+        }
+        res.redirect('/admin');
+    });
 });
 
 router.get('/subcategories', function(req, res) {
@@ -145,5 +158,62 @@ router.post('/categories/add', function(req, res) {
   });
 })
 
+router.get('/handpicked', function(req, res) {
+  HandPicked.find({}).populate('newsletter').exec(function(err, handpicked) {
+    Newsletter.populate(handpicked, [{path: 'category', select: 'name'},{path: 'subcategory', select: 'name'}],
+      function(err, newsletter){
+        if(err) {
+          console.log(err);
+        }
+        var model = {
+          handpicked: JSON.parse(JSON.stringify(handpicked))
+        }
+        // res.json({handpicked: handpicked})
+        res.render('handPicked', model);
+    })
+  });
+});
+
+// Add Hnadpicked Newsletter
+router.get('/handpicked/add', function(req, res) {
+  Newsletter.find({}, function(err, newsletters) {
+    if(err) {
+      console.log(err);
+    }
+    var model = {
+      newsletters: newsletters
+    }
+    res.render('addhandpicked', model);
+  })
+});
+
+router.post('/handpicked/add', function(req, res) {
+  var handpicked = req.body.handpicked;
+  Newsletter.findOne({_id: handpicked}, function(err, newsletter) {
+    if(err) {
+      console.log(err);
+    }
+    var newHandPicked = new HandPicked({
+      name: newsletter.name,
+      description: newsletter.description,
+      website: newsletter.website,
+      category: newsletter.category,
+      subcategory: newsletter.subcategory
+    });
+    newHandPicked.save(function(err, handPickSaved) {
+      res.redirect('/admin/handpicked');
+    });
+  });
+});
+
+    // Delete Handpicked
+router.delete('/handpicked/delete/:id', function(req,res) {
+  HandPicked.findOneAndRemove({_id: req.params.id}, function(err, status) {
+      if(err) {
+          console.log(err);
+      }
+      res.redirect('/admin/handpicked');
+  });
+});
 
 module.exports = router;
