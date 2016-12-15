@@ -24,16 +24,32 @@ $(document).ready(function() {
         $('#subCategorySelector').html(options);
     });
 
-    $('.removeBook').click(function(e) {
+    $('.removeNewsletter').click(function(e) {
         deleteId = $(this).data('id');
+        deleteId = deleteId.replace(/"/g,"");
+        console.log(deleteId);
         $.ajax({
-            url:'/manage/books/delete/'+deleteId,
+            url:'/admin/delete/'+deleteId,
             type:'DELETE',
             success: function() {
 
             }
         });
-        window.location = '/manage/books';
+        window.location = '/admin';
+    });
+
+    $('.removeHandPicked').click(function(e) {
+        deleteId = $(this).data('id');
+        deleteId = deleteId.replace(/"/g,"");
+        console.log(deleteId);
+        $.ajax({
+            url:'/admin/handpicked/delete/'+deleteId,
+            type:'DELETE',
+            success: function() {
+
+            }
+        });
+        window.location = '/admin/handpicked';
     });
 
     //Remove Category

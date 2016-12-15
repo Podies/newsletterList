@@ -1,0 +1,32 @@
+extends adminLayout
+
+block content
+  a.success.button(href='/admin/handpicked/add')  Add Handpicked
+  table
+    thead
+        tr
+          th(width='200') Id
+          |       
+          th(width='150') Name
+          |       
+          th(width='150') website
+          |       
+          th(width='150') Category
+          |       
+          th(width='150') Subcategory
+          th(width='100') DELETE
+    |   
+    tbody
+      for handpick in handpicked
+        tr
+          td #{handpick._id}
+          |       
+          td #{handpick.name}
+          |       
+          td #{handpick.website}
+          |       
+          td #{handpick.category.name}
+          |       
+          td #{handpick.subcategory.name}
+          td 
+            a.tiny.alert.button.removeHandPicked(data-id=handpick._id, href='#') Delete
