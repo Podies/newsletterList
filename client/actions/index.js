@@ -5,10 +5,10 @@ const fetchCategory = () => {
   return(dispatch) => {
     return api.ajaxFetchCategory().then
       ((responseData) => {
-        dispatch(action.addCategory(responseData.categories))
+        dispatch(actions.addCategory(responseData.categories))
       },
       (err) => {
-        dispatch(action.updateFailed(err));
+        dispatch(actions.updateFailed(err));
       }
     );
   };
@@ -18,10 +18,10 @@ const fetchSubCategory = () => {
   return(dispatch) => {
     return api.ajaxFetchSubCategory().then
       ((responseData) => {
-        dispatch(action.addSubCategory(responseData.subcategories))
+        dispatch(actions.addSubCategory(responseData.subcategories))
       },
       (err) => {
-        dispatch(action.updateFailed(err));
+        dispatch(actions.updateFailed(err));
       }
     );
   };

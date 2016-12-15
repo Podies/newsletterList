@@ -1,0 +1,12 @@
+extends adminLayout
+
+block content
+  form(method='post', action='/admin/handpicked/add')        
+    .large-8.columns
+      label Select Newsletter
+      select(name='handpicked')
+        each newsletter, i in newsletters
+          option(value=newsletter._id) #{newsletter.name}
+    |         
+    .large-8.columns
+      button.success.button(type='submit') Save
