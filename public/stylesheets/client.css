@@ -301,7 +301,7 @@ body {
     font-size: 1em !important;
   }
   body .main-body {
-    margin-top: 28%;
+    margin-top: 26%;
   }
   body .main-body .categories .category-tab .sub-category-list-right, body .main-body .categories .category-tab .sub-category-list-left {
     width: 414px;
@@ -761,7 +761,7 @@ header .main-header .primary-nav .right-content .submit-btn:hover:before, header
   transform-origin: top left;
 }
 .sidebar .nav-bar .category-name .sub-category-list-up li a, .sidebar .nav-bar .category-name .sub-category-list-down li a {
-  padding: 1.4em 0;
+  padding: 0.9em 0;
   text-decoration: none;
   color: #999999;
   font-size: 1em;

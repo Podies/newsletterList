@@ -64,7 +64,7 @@ app.use('/admin', admin);
 app.use('/api', api);
 
 app.use('*', function(req, res) {
-
+  
   match({ routes: routes, location: req.originalUrl },
     (error, redirectLocation, renderProps) => {
     let initialState = {};

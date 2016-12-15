@@ -15,9 +15,12 @@ const ajaxFetchCategory = (data) => {
 };
 
 //fetch newsletters
-const ajaxFetchNewsletters = (data) => {
-  const url = endpoint+'/api/newsletter';
-
+const ajaxFetchNewsletters = (params) => {
+  let url = endpoint+'/api/categories/'+params.category+'/newsletters';
+  if(params.category && params.subcategory) {
+    url = endpoint+'/api/subcategories/'+params.subcategory+'/newsletters';
+  }
+  
   return axios.get(url)
     .then((response) => {
       if (response.status !== 200) {
@@ -26,6 +29,18 @@ const ajaxFetchNewsletters = (data) => {
       return response.data;
     });
 };
+
+const ajaxFetchHandPicked = () => {
+  let url = endpoint+'/api/handpicked/';
+  
+  return axios.get(url)
+    .then((response) => {
+      if (response.status !== 200) {
+        return Promise.reject('Newsletter Loading Failed');
+      }
+      return response.data;
+    });
+}
 
 export {
   ajaxFetchCategory, ajaxFetchNewsletters

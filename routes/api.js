@@ -18,6 +18,28 @@ router.get('/newsletter', function(req, res) {
   })
 });
 
+router.get('/categories/:category/newsletters', function(req, res) {
+  Category.findOne({name: req.params.category}).exec(function(err, category){
+    Newsletter.find({ category: category._id }).populate('category', 'name').populate('subcategory','name').exec(function(err, newsletters) {
+      if(err) {
+        console.log(err);
+      }
+      res.json({newsletters: newsletters});
+    })
+  });
+});
+
+router.get('/subcategories/:subcategory/newsletters', function(req, res) {
+  Subcategory.findOne({name: req.params.subcategory}).exec(function(err, subCategory){
+    Newsletter.find({subcategory: subCategory._id}).populate('category', 'name').populate('subcategory','name').exec(function(err, newsletters) {
+      if(err) {
+        console.log(err);
+      }
+      res.json({newsletters: newsletters});
+    })
+  });
+});
+
 router.get('/categories', function(req, res) {
   Category.find({}).populate('subcategories', 'name').exec(function(err, categories) {
     if(err) {

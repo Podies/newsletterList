@@ -21,6 +21,6 @@ class Landing extends React.Component {
   }
 }
 
-Landing.need = [() => actions.fetchCategory(), () => actions.fetchNewsletters()];
+Landing.need = [() => actions.fetchCategory(), () => actions.fetchHandPicked()];
 
 export default Landing;

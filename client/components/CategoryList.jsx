@@ -11,7 +11,6 @@ class CategoryList extends Component {
     return (
       <div className="main-body col-wd-12">
         <div className="col">
-          <h1>Categories</h1>
           <ul className="categories col-wd-12">
             {
               this.props.categories.list.map((category, i) => <Category key={i} category={category} />)

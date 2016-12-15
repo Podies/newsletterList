@@ -14,9 +14,9 @@ const fetchCategory = () => {
   };
 };
 
-const fetchNewsletters = () => {
+const fetchNewsletters = (params) => {
   return(dispatch) => {
-    return api.ajaxFetchNewsletters().then
+    return api.ajaxFetchNewsletters(params).then
       ((responseData) => {
         dispatch(actions.addNewsletters(responseData.newsletters))
       },
@@ -26,6 +26,19 @@ const fetchNewsletters = () => {
     );
   };
 };
+
+const fetchHandPicked = () => {
+  return(dispatch) => {
+    return api.ajaxFetchHandPicked().then
+      ((responseData) => {
+        dispatch(actions.addNewsletters(responseData.newsletters))
+      },
+      (err) => {
+        dispatch(actions.updateFailed(err));
+      }
+    );
+  };
+}
 
 export  {
   fetchCategory, fetchNewsletters
