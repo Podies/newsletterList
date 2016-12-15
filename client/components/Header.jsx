@@ -7,7 +7,7 @@ const Header = () => (
       <div className="col main-header">
         <div className="primary-nav col-wd-12">
           <div className="brand col-xs-2 col-sm-3 col-md-4 col-wd-2">
-            <Link className="brand-name" to="/">
+            <Link to="/" className="brand-name">
               <img src="/images/newsletter-logo.png" alt="Newsletter-logo" />
               <span>Newsletter<br />List</span>
             </Link>

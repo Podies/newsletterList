@@ -14,18 +14,19 @@ const ajaxFetchCategory = (data) => {
     });
 };
 
-const ajaxFetchSubCategory = (data) => {
-  const url = endpoint+'/api/subcategories';
+//fetch newsletters
+const ajaxFetchNewsletters = (data) => {
+  const url = endpoint+'/api/newsletter';
 
   return axios.get(url)
     .then((response) => {
       if (response.status !== 200) {
-        return Promise.reject('Sub Category Loading Failed');
+        return Promise.reject('Newsletter Loading Failed');
       }
       return response.data;
     });
 };
 
 export {
-  ajaxFetchCategory, ajaxFetchSubCategory
+  ajaxFetchCategory, ajaxFetchNewsletters
 };

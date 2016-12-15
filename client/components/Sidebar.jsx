@@ -1,106 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router';
 
-const Sidebar = () => (
-  <div className="col-xs-2 col-sm-2 col-md-2 col-wd-4 sidebar">
-    <ul className="nav-bar col-wd-12">
-      <li className="category-name col-wd-12"><a href="#" className="category-link col-wd-12">Category-name</a>
-        <ul className="sub-category-list col-wd-12">
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-        </ul>
-      </li>
-      <li className="category-name col-wd-12"><a href="#" className="category-link col-wd-12">Category-name</a>
-        <ul className="sub-category-list col-wd-12">
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-        </ul>
-      </li>
-      <li className="category-name col-wd-12"><a href="#" className="category-link col-wd-12">Category-name</a>
-        <ul className="sub-category-list col-wd-12">
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-        </ul>
-      </li>
-      <li className="category-name col-wd-12"><a href="#" className="category-link col-wd-12">Category-name</a>
-        <ul className="sub-category-list col-wd-12">
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-        </ul>
-      </li>
-      <li className="category-name col-wd-12"><a href="#" className="category-link col-wd-12">Category-name</a>
-        <ul className="sub-category-list col-wd-12">
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-        </ul>
-      </li>
-      <li className="category-name col-wd-12"><a href="#" className="category-link col-wd-12">Category-name</a>
-        <ul className="sub-category-list col-wd-12">
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-        </ul>
-      </li>
-      <li className="category-name col-wd-12"><a href="#" className="category-link col-wd-12">Category-name</a>
-        <ul className="sub-category-list col-wd-12">
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-        </ul>
-      </li>
-      <li className="category-name col-wd-12"><a href="#" className="category-link col-wd-12">Category-name</a>
-        <ul className="sub-category-list col-wd-12">
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-        </ul>
-      </li>
-      <li className="category-name col-wd-12"><a href="#" className="category-link col-wd-12">Category-name</a>
-        <ul className="sub-category-list col-wd-12">
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-        </ul>
-      </li>
-      <li className="category-name col-wd-12"><a href="#" className="category-link col-wd-12">Category-name</a>
-        <ul className="sub-category-list col-wd-12">
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-        </ul>
-      </li>
-      <li className="category-name col-wd-12"><a href="#" className="category-link col-wd-12">Category-name</a>
-        <ul className="sub-category-list col-wd-12">
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-        </ul>
-      </li>
-      <li className="category-name col-wd-12"><a href="#" className="category-link col-wd-12">Category-name</a>
-        <ul className="sub-category-list col-wd-12">
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-          <li className="col-wd-12"><a href="#" className="col-wd-12">sub-category</a></li>
-        </ul>
-      </li>
+const Sidebar = (props) => (
+  <li className="category-name col-wd-12">
+    <Link to={`/${props.category.name}`} className="category-link col-wd-12">{props.category.name}</Link>
+    <ul className="sub-category-list-up col-wd-12">
+      {
+        props.category.subcategories.map((subcategory, i) => 
+          <li className="col-wd-12" key={i}>
+            <Link to={`/${props.category.name}/${subcategory.name}`} className="col-wd-12">{subcategory.name}</Link>
+          </li>
+        )
+      }
     </ul>
-  </div>
+  </li>
 );
 
 export default Sidebar;

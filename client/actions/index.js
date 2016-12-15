@@ -14,11 +14,11 @@ const fetchCategory = () => {
   };
 };
 
-const fetchSubCategory = () => {
+const fetchNewsletters = () => {
   return(dispatch) => {
-    return api.ajaxFetchSubCategory().then
+    return api.ajaxFetchNewsletters().then
       ((responseData) => {
-        dispatch(actions.addSubCategory(responseData.subcategories))
+        dispatch(actions.addNewsletters(responseData.newsletters))
       },
       (err) => {
         dispatch(actions.updateFailed(err));
@@ -28,5 +28,5 @@ const fetchSubCategory = () => {
 };
 
 export  {
-  fetchCategory, fetchSubCategory
+  fetchCategory, fetchNewsletters
 }

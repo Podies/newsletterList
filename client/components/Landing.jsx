@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header';
 import CategoryList from './CategoryList';
 import * as actions from '../actions';
+import NewsletterGrid from './NewsletterGrid'
 
 class Landing extends React.Component {
 
@@ -20,6 +21,6 @@ class Landing extends React.Component {
   }
 }
 
-Landing.need = [() => actions.fetchCategory()];
+Landing.need = [() => actions.fetchCategory(), () => actions.fetchNewsletters()];
 
 export default Landing;

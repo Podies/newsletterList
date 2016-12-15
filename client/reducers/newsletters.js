@@ -4,10 +4,10 @@ const defaultState = {
   listLoadingError: ''
 };
 
-const subCategories = (state = defaultState, action) => {
+const newsletters = (state = defaultState, action) => {
   let copy = Object.assign({}, state);
   switch (action.type) {
-    case 'UPDATE_CATEGORY':
+    case 'ADD_NEWSLETTERS':
       copy.list = action.data;
       copy.listLoaded = true;
       return copy;
@@ -16,4 +16,4 @@ const subCategories = (state = defaultState, action) => {
   }
 };
 
-export default subCategories;
+export default newsletters;

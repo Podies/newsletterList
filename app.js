@@ -64,6 +64,7 @@ app.use('/admin', admin);
 app.use('/api', api);
 
 app.use('*', function(req, res) {
+
   match({ routes: routes, location: req.originalUrl },
     (error, redirectLocation, renderProps) => {
     let initialState = {};
@@ -81,13 +82,11 @@ app.use('*', function(req, res) {
       // below, if you're using a catch-all route.
       return fetchComponentData(store, renderProps.components, renderProps.params)
         .then(() => {
-          console.log('called before render');
           const body = renderToString(
             <Provider store={store}>       
               <RouterContext {...renderProps} />
             </Provider>
           );
-          console.log('here' );
           res.render('index', { body: body, initialState: JSON.stringify(store.getState()) });
         })
     } else {

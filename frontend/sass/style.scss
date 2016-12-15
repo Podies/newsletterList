@@ -123,7 +123,7 @@ header {
 				justify-content: flex-end;
 				align-items: center;
 				.search {
-					padding: 0.6em;
+					padding: 6px;
 				}
 				.submit-btn {
 					@include button;
@@ -160,6 +160,91 @@ header {
 
 .main-body {
 	margin-top: 32%;
+	.handpicked-cards {
+		.card {
+			.newsletter-card {
+				background-color: white;
+				padding: 1.2em;
+				height: 200px;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				margin-top: 9%;
+				line-height: 1.2em;
+				letter-spacing: 0.02em;
+				animation: {
+					name: card-appear;
+					duration: 800ms;
+					timing-function: cubic-bezier(0, 0, 0, 0.93);
+					fill-mode: forwards;
+				}
+				h2 {
+					text-align: center;
+					color: #F15B2E;
+				}
+				p {
+					font-size: 0.9em;
+					color: #999999;
+				}
+				.metadata {
+					display: flex;
+					justify-content: space-between;
+					align-items: center;
+          .tag-details {
+          	display: flex;
+				    height: 36px;
+				    flex-direction: column;
+				    justify-content: space-between;
+						.tag-1 {
+							color: #712c7f;
+							font-weight: 600;
+						}
+						.tag-2 {
+							display: block;
+							font-size: 0.9em;
+							color: #999999;
+							font-weight: 600;
+						}
+				  }
+				  .get-it-btn {
+				  	text-align: center;
+				  	padding: 0.8em 0;
+				  	text-decoration: none;
+				  	text-transform: uppercase;
+				  	font-size: 0.8em;
+				  	color: #F15B2E;
+				  	font-weight: 600;
+				  	letter-spacing: 0.1em;
+				  	display: inline-block;
+						transform: perspective(1px);
+						position: relative;
+						transition-duration: 300ms;
+						&:before {
+							content: "";
+							position: absolute;
+							z-index: -1;
+							top: 0;
+							bottom: 0;
+							left: 0;
+							right: 0;
+							background-color:#F15B2E;
+							transform: scaleX(0);
+							transition-property: transform;
+							transition-duration: 300ms;
+							transition-timing-function: ease-out; 
+						}
+						&:hover, :focus, :active {
+							color:white;
+						}
+
+						&:hover:before, :focus:before, :active:before {
+							transform: scaleX(1);
+						}
+				  }
+				}
+			}
+	  }
+	}
 	h1 {
 		color: #999999;
 		margin-bottom: 0.6em;

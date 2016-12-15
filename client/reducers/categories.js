@@ -1,7 +1,7 @@
 const defaultState = {
   list: [],
   listLoaded: false,
-  listLoadingError: '',
+  listLoadingError: ''
 };
 
 const categories = (state = defaultState, action) => {

@@ -2,8 +2,8 @@ import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
 import categories from './categories';
-import subCategories from './subCategories';
+import newsletters from './newsletters'
 
-const rootReducer = combineReducers({categories, subCategories, routing: routerReducer});
+const rootReducer = combineReducers({categories, newsletters, routing: routerReducer});
 
 export default rootReducer;
