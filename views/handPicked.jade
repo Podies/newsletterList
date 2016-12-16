@@ -21,12 +21,12 @@ block content
         tr
           td #{handpick._id}
           |       
-          td #{handpick.name}
+          td #{handpick.newsletter.name}
           |       
-          td #{handpick.website}
+          td #{handpick.newsletter.website}
           |       
-          td #{handpick.category.name}
+          td #{handpick.newsletter.category.name}
           |       
-          td #{handpick.subcategory.name}
+          td #{handpick.newsletter.subcategory.name}
           td 
             a.tiny.alert.button.removeHandPicked(data-id=handpick._id, href='#') Delete

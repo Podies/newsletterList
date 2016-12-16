@@ -159,16 +159,16 @@ router.post('/categories/add', function(req, res) {
 })
 
 router.get('/handpicked', function(req, res) {
-  HandPicked.find({}).populate('newsletter').exec(function(err, handpicked) {
-    Newsletter.populate(handpicked, [{path: 'category', select: 'name'},{path: 'subcategory', select: 'name'}],
+  HandPicked.find({}).lean().populate('newsletter').exec(function(err, handpicked) {
+    Newsletter.populate(handpicked, [{path: 'newsletter.subcategory', model: 'Subcategory', select: 'name'}, {path: 'newsletter.category', model: 'Category', select: 'name'},],
       function(err, newsletter){
         if(err) {
           console.log(err);
         }
         var model = {
-          handpicked: JSON.parse(JSON.stringify(handpicked))
+          handpicked: handpicked
         }
-        // res.json({handpicked: handpicked})
+        console.log(handpicked);
         res.render('handPicked', model);
     })
   });
@@ -189,21 +189,10 @@ router.get('/handpicked/add', function(req, res) {
 
 router.post('/handpicked/add', function(req, res) {
   var handpicked = req.body.handpicked;
-  Newsletter.findOne({_id: handpicked}, function(err, newsletter) {
-    if(err) {
-      console.log(err);
-    }
-    var newHandPicked = new HandPicked({
-      name: newsletter.name,
-      description: newsletter.description,
-      website: newsletter.website,
-      category: newsletter.category,
-      subcategory: newsletter.subcategory
-    });
-    newHandPicked.save(function(err, handPickSaved) {
-      res.redirect('/admin/handpicked');
-    });
-  });
+  var newHandPicked = new HandPicked({newsletter: handpicked});
+  newHandPicked.save(function(err, saved){
+    res.redirect('/admin/handpicked')
+  })
 });
 
     // Delete Handpicked

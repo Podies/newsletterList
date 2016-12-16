@@ -13,11 +13,11 @@ class CategoryList extends Component {
         <div className="col">
           <ul className="categories col-wd-12">
             {
-              this.props.categories.list.map((category, i) => <Category key={i} category={category} />)
+              this.props.categories.list.map((category, i) => <Category key={i} category={category} dispatch={this.props.dispatch}  />)
             }
           </ul>
         </div>
-        <NewsletterGrid {...this.props.newsletters}/>
+        <NewsletterGrid newsletters={this.props.newsletters} dispatch={this.props.dispatch} />
       </div>
     )
   }

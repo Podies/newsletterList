@@ -9,6 +9,25 @@ class Category extends Component {
       subMenuClassName: 'sub-category-list-right',
     };
     this.changeSubmenuAlignment = this.changeSubmenuAlignment.bind(this);
+    this.loadCategory = this.loadCategory.bind(this);
+    this.loadSubCategory = this.loadSubCategory.bind(this);
+  }
+
+  loadCategory(e){
+    e.preventDefault();
+    const categoryName = e.currentTarget.getAttribute('data-name');
+    this.props.dispatch(actions.fetchNewsletters({category: categoryName})).then(() => {
+      this.context.router.push('/'+categoryName);
+    });
+  }
+
+  loadSubCategory(e){
+    e.preventDefault();
+    const categoryName = e.currentTarget.getAttribute('data-category');
+    const subCategoryName = e.currentTarget.getAttribute('data-subcategory');
+    this.props.dispatch(actions.fetchNewsletters({category: categoryName, subcategory: subCategoryName})).then(() => {
+      this.context.router.push('/'+categoryName+'/'+subCategoryName);
+    });
   }
 
   changeSubmenuAlignment(e) {
@@ -30,7 +49,7 @@ class Category extends Component {
            {
             category.subcategories.map((subcategory, i) => (
               <li key={i}>
-                <Link to={`${category.name}/${subcategory.name}`} className="sub-category">
+                <Link to={`${category.name}/${subcategory.name}`} onClick={this.loadSubCategory} data-category={category.name} data-subcategory={subcategory.name} className="sub-category">
                   {subcategory.name}
                 </Link>
               </li>
@@ -43,7 +62,7 @@ class Category extends Component {
     }
     return(
       <li className="category-tab" onMouseOver={this.changeSubmenuAlignment}>
-        <Link to={`/${category.name}`} className="category-name">
+        <Link to={`/${category.name}`} onClick={this.loadCategory} data-name={category.name} className="category-name">
           <i className={`fa fa-${category.className}`} aria-hidden="true"></i>
           <p>{category.name}</p>
           <span className="triangle"></span>
@@ -52,6 +71,10 @@ class Category extends Component {
       </li>
     )
   }
+}
+
+Category.contextTypes = {
+  router: React.PropTypes.object,
 }
 
 export default Category;

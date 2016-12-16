@@ -18,7 +18,7 @@ class CategoryPage extends Component{
             <ul className="nav-bar col-wd-12">
             {
               this.props.categories.list.map((category, i) => 
-                <Sidebar key={i} category={category} />)
+                <Sidebar key={i} dispatch={this.props.dispatch} category={category} />)
             }
             </ul>
           </div>
@@ -28,7 +28,7 @@ class CategoryPage extends Component{
                 <div className="primary-data">
                   <span className="col-xs-2 col-sm-3">
                     <span>{this.props.params.category}</span>
-                    <span>/</span>
+                    <span>{this.props.params.subcategory ? '/' : null}</span>
                     <span>{this.props.params.subcategory}</span>
                   </span>
                   <a href="#" className="follow-btn">Follow</a>

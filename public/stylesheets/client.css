@@ -496,6 +496,7 @@ header .main-header .primary-nav .brand .brand-name span {
   font-weight: 500;
   line-height: 1.2em;
   letter-spacing: 0.04em;
+  margin-bottom: 6px;
 }
 header .main-header .primary-nav .right-content {
   display: flex;
@@ -804,7 +805,7 @@ header .main-header .primary-nav .right-content .submit-btn:hover:before, header
   margin-top: 8%;
 }
 .category-details .nav-details {
-  margin-top: 2%;
+  margin: 0px 10px;
   display: flex;
   flex-direction: column;
   height: 50px;
@@ -818,7 +819,7 @@ header .main-header .primary-nav .right-content .submit-btn:hover:before, header
   color: #F15B2E;
   font-size: 1.4em;
   font-weight: 500;
-  margin-right: 1em;
+  margin-right: 6px;
 }
 .category-details .nav-details .subcategory-page-tag .follow-btn, .category-details .nav-details .primary-data .follow-btn {
   padding: 0.4em 2em;

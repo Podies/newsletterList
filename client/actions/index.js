@@ -21,6 +21,7 @@ const fetchNewsletters = (params) => {
         dispatch(actions.addNewsletters(responseData.newsletters))
       },
       (err) => {
+        //check error type - 404, 500, 
         dispatch(actions.updateFailed(err));
       }
     );
@@ -31,7 +32,7 @@ const fetchHandPicked = () => {
   return(dispatch) => {
     return api.ajaxFetchHandPicked().then
       ((responseData) => {
-        dispatch(actions.addNewsletters(responseData.newsletters))
+        dispatch(actions.addNewsletters(responseData.handpicked))
       },
       (err) => {
         dispatch(actions.updateFailed(err));
@@ -41,5 +42,5 @@ const fetchHandPicked = () => {
 }
 
 export  {
-  fetchCategory, fetchNewsletters
+  fetchCategory, fetchNewsletters, fetchHandPicked
 }

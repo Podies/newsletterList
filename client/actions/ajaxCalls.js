@@ -43,5 +43,5 @@ const ajaxFetchHandPicked = () => {
 }
 
 export {
-  ajaxFetchCategory, ajaxFetchNewsletters
+  ajaxFetchCategory, ajaxFetchNewsletters, ajaxFetchHandPicked
 };

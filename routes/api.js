@@ -27,7 +27,12 @@ router.get('/newsletter', function(req, res) {
 });
 
 router.get('/categories/:category/newsletters', function(req, res) {
+
   Category.findOne({name: req.params.category}).exec(function(err, category){
+    if(!category) {
+      return res.status(404).send({ message: 'Not Found.' });
+    }
+
     Newsletter.find({ category: category._id }).populate('category', 'name').populate('subcategory','name').exec(function(err, newsletters) {
       if(err) {
         console.log(err);
@@ -69,21 +74,16 @@ router.get('/subcategories', function(req, res) {
 });
 
 router.get('/handpicked', function(req, res) {
-  // OLD CODE
-  // HandPicked.find({}).populate('category', 'name').populate('subcategory','name').exec(function(err, handpicked) {
-  //   if(err) {
-  //     console.log(err);
-  //   }
-  //   res.json({handpicked: handpicked});
-  // })
-
-  HandPicked.find({}).populate('newsletter').exec(function(err, handpicked) {
-    Newsletter.populate(handpicked, [{path: 'category', select: 'name'},{path: 'subcategory', select: 'name'}],
+  HandPicked.find({}).lean().populate('newsletter').exec(function(err, handpicked) {
+    Newsletter.populate(handpicked, [{path: 'newsletter.subcategory', model: 'Subcategory', select: 'name'}, {path: 'newsletter.category', model: 'Category', select: 'name'},],
       function(err, newsletter){
         if(err) {
           console.log(err);
         }
-        res.json({handpicked: handpicked});
+        var newsletters = handpicked.map((item, i) => {
+          return item.newsletter;
+        });
+        res.json({handpicked: newsletters});
     })
   });
 
