@@ -21,7 +21,10 @@ const fetchNewsletters = (params) => {
         dispatch(actions.addNewsletters(responseData.newsletters))
       },
       (err) => {
-        //check error type - 404, 500, 
+        //check error type - 404, 500,
+        if (err.response.status === 404) {
+          dispatch(actions.show404Page(err))
+        } 
         dispatch(actions.updateFailed(err));
       }
     );

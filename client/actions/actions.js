@@ -16,7 +16,13 @@ const updateFailed = (data) => {
     data
   };
 };
+const show404Page = (data) => {
+  return {
+    type: 'SHOW_404_PAGE',
+    data
+  };
+};
 
 export {
-  addCategory, updateFailed, addNewsletters
+  addCategory, updateFailed, addNewsletters, show404Page
 };

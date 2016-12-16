@@ -1,13 +1,21 @@
-import React from 'react';
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import NotFoundPage from './NotFoundPage';
 
-const App = (props) => {
-  const {children, ...rest} = props;
-  return (
-    <div>
-      {React.cloneElement(children, rest)}
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+    const {children, ...rest} = this.props;
+    return (
+      <div>
+        {
+          this.props.show404page['404'] ? <NotFoundPage /> : <div> {React.cloneElement(children, rest)} </div>
+        }
+      </div>
+    )
+  }
 }
 
 function mapStateToProps(state) {

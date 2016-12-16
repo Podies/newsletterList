@@ -10,6 +10,6 @@ export default (
     <IndexRoute component={Landing} />
     <Route component={CategoryPage} path=":category" />
     <Route component={CategoryPage} path=":category/:subcategory" />
-    <Route component={NotFoundPage} path="*" />
+    <Route component={NotFoundPage} path="*" status={404} />
   </Route>
 );

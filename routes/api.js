@@ -44,6 +44,9 @@ router.get('/categories/:category/newsletters', function(req, res) {
 
 router.get('/subcategories/:subcategory/newsletters', function(req, res) {
   Subcategory.findOne({name: req.params.subcategory}).exec(function(err, subCategory){
+    if(!subCategory) {
+      return res.status(404).send({ message: 'Not Found.' });
+    }
     Newsletter.find({subcategory: subCategory._id}).populate('category', 'name').populate('subcategory','name').exec(function(err, newsletters) {
       if(err) {
         console.log(err);
