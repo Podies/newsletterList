@@ -10,7 +10,7 @@ class CategoryPage extends Component{
   render() {
     return (
       <div>
-        <Header />
+        <Header {...this.props} />
         <input type="checkbox" id="sidebartoggler" />
         <div className="page-wrap">
           <label htmlFor="sidebartoggler" className="toggle">≡</label>
@@ -26,12 +26,12 @@ class CategoryPage extends Component{
             <div className="col">
               <div className="col nav-details">
                 <div className="primary-data">
-                  <span className="col-xs-2 col-sm-3">
+                  <span>
                     <span>{this.props.params.category}</span>
                     <span>{this.props.params.subcategory ? '/' : null}</span>
                     <span>{this.props.params.subcategory}</span>
                   </span>
-                  <a href="#" className="follow-btn">Follow</a>
+                  <a href="#" className="follow-btn">Subscribe</a>
                 </div>
               </div>
               <div className="card-row col-xs-12 col-sm-12 col-md-12 col-wd-12 ">
@@ -48,7 +48,7 @@ class CategoryPage extends Component{
                                 <span className="tag-1">{item.subcategory.name}</span>
                                 <span className="tag-2">{item.category.name}</span>
                               </div>
-                              <a target="_blank" href={item.website} className="col-wd-4 get-it-btn">Get It</a>
+                              <a target="_blank" href={`http://${item.website}`} className="col-wd-4 get-it-btn">Get It</a>
                             </div>
                           </div>
                         </div>

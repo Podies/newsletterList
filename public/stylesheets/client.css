@@ -952,3 +952,15 @@ header .main-header .primary-nav .right-content .submit-btn:hover:before, header
 .category-details .card-row .card .newsletter-card .metadata .get-it-btn:hover:before, .category-details .card-row .card .newsletter-card .metadata .get-it-btn :focus:before, .category-details .card-row .card .newsletter-card .metadata .get-it-btn :active:before {
   transform: scaleX(1);
 }
+.not-found{
+  width: 200px;
+  height: 200px;
+  margin: 200px auto;
+}
+.not-found h1{
+  font-size: 6em;
+  margin: 0;
+}
+.not-found p{
+  margin-top: 10px;
+}
