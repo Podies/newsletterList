@@ -5,6 +5,7 @@ var Newsletter = require('../models/newsletterModel');
 var Subcategory = require('../models/subCategory');
 var HandPicked = require('../models/handPicked');
 var User = require('../models/user');
+var SubmitNewsletter = require('../models/submitNewsletter');
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -120,6 +121,34 @@ router.post('./user/subscribe', function(req, res) {
       })
     }
 
+  });
+});
+
+router.get('/search/:query',function(req, res) {
+  Newsletter.find({$text: { $search: req.body.query}}).exec(function(err, data) {
+    if(err) {
+      console.log(err);
+    }
+    res.json(search: data);
+  })
+});
+
+router.post('/submit', function(req, res) {
+  var name = req.body.name;
+  var description = req.body.description;
+  var website = req.body.website;
+  var category = req.body.category;
+  var subcategory = req.body.subcategory;
+
+  if(!name || !website) {
+    res.status(404).send({message: "Name and Website is Must !!"});
+  }
+
+  var newSubmitNewsletter = new SubmitNewsletter({name: name, description: description, website: website, category: categories, subcategory: subcategory});
+  newSubmitNewsletter.save(function(err, savedNewsletter) {
+    if(err) {
+      console.log(err);
+    }
   });
 });
 module.exports = router;
