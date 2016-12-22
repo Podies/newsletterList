@@ -7,8 +7,15 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.loadHomePage = this.loadHomePage.bind(this);
+    this.searchNewsletters = this.searchNewsletters.bind(this);
   }
-
+  searchNewsletters(e) {
+    if(e.keyCode == 13) {
+      this.props.dispatch(actions.searchNewsletters(this.refs.searchText.value)).then(() => {
+		  this.context.router.push('/search?text='+this.refs.searchText.value);
+      });
+    }
+  }
   loadHomePage(e) {
     e.preventDefault();
     this.props.dispatch(actions.fetchHandPicked()).then(() => {
@@ -29,17 +36,16 @@ class Header extends Component {
                 </Link>
               </div>
               <div className="right-content col-xs-10 col-sm-9 col-md-8 col-wd-10">
-                <input type="search" name="Search" placeholder="Search" className="search col-xs-2 col-sm-3 col-md-4 col-wd-5" />
-                <a href="#" className="submit-btn">Submit</a>
+                <input type="search" ref="searchText" name="Search" onKeyDown={this.searchNewsletters} placeholder="Search Newsletters" className="search col-xs-2 col-sm-3 col-md-4 col-wd-5" />
               </div>
             </div>
           </div>
-        </div>  
+        </div>
       </header>
     )
   }
 }
-  
+
 Header.contextTypes = {
   router: React.PropTypes.object,
 }

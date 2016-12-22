@@ -12,7 +12,7 @@ class NewsletterGrid extends Component {
     return (
       <div>
         {
-          this.props.newsletters.list.map((newsletter, i) => <SingleNewsletter key={i} newsletter={newsletter}/>)
+          this.props.newsletters.list.map((newsletter, i) => <SingleNewsletter key={i} newsletter={newsletter} dispatch={this.props.dispatch}/>)
         }
       </div>
     )

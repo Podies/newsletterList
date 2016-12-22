@@ -122,4 +122,14 @@ router.post('./user/subscribe', function(req, res) {
 
   });
 });
+
+router.get('/search/:searchTerm', function(req, res){
+	Newsletter.find({$text: { $search: req.params.searchTerm}}).populate('category', 'name').populate('subcategory', 'name').exec(function(err, data){
+		if (err) {
+			console.log(err);
+		}
+		res.json({search: data});
+	});
+});
+
 module.exports = router;

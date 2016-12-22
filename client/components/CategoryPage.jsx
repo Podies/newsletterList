@@ -2,10 +2,29 @@ import React, { Component } from 'react';
 import Sidebar from './Sidebar';
 import Header from './Header';
 import * as actions from '../actions';
+import { Link } from 'react-router';
 
 class CategoryPage extends Component{
   constructor(props){
     super(props);
+    this.loadCategory = this.loadCategory.bind(this);
+    this.loadSubCategory = this.loadSubCategory.bind(this);
+  }
+  loadCategory(e){
+	  e.preventDefault();
+	  const categoryName = e.currentTarget.getAttribute('data-name');
+	  this.props.dispatch(actions.fetchNewsletters({category: categoryName})).then(() => {
+	    this.context.router.push('/'+categoryName);
+  	});
+  }
+
+  loadSubCategory(e){
+    e.preventDefault();
+    const categoryName = e.currentTarget.getAttribute('data-category');
+    const subCategoryName = e.currentTarget.getAttribute('data-subcategory');
+    this.props.dispatch(actions.fetchNewsletters({category: categoryName, subcategory: subCategoryName})).then(() => {
+      this.context.router.push('/'+categoryName+'/'+subCategoryName);
+    });
   }
   render() {
     return (
@@ -17,7 +36,7 @@ class CategoryPage extends Component{
           <div className="col-xs-2 col-sm-2 col-md-2 col-wd-4 sidebar">
             <ul className="nav-bar col-wd-12">
             {
-              this.props.categories.list.map((category, i) => 
+              this.props.categories.list.map((category, i) =>
                 <Sidebar key={i} dispatch={this.props.dispatch} category={category} />)
             }
             </ul>
@@ -31,7 +50,7 @@ class CategoryPage extends Component{
                     <span>{this.props.params.subcategory ? '/' : null}</span>
                     <span>{this.props.params.subcategory}</span>
                   </span>
-                  <a href="#" className="follow-btn">Subscribe</a>
+                  <Link to="/subscribe" className="follow-btn">Subscribe</Link>
                 </div>
               </div>
               <div className="card-row col-xs-12 col-sm-12 col-md-12 col-wd-12 ">
@@ -45,8 +64,23 @@ class CategoryPage extends Component{
                             <p className="col-wd-12">{item.description}</p>
                             <div className="metadata col-wd-12">
                               <div className="tag-details col-wd-8">
-                                <span className="tag-1">{item.subcategory.name}</span>
-                                <span className="tag-2">{item.category.name}</span>
+                                <Link
+                                	to={`/${item.category.name}/${item.subcategory.name}`}
+                                	data-category={item.category.name}
+                                	data-subcategory={item.subcategory.name}
+                                	className="tag-1"
+                                	onClick={this.loadSubCategory}
+                                	>
+                                	{item.subcategory.name}
+                                </Link>
+                                <Link
+                                	to={`/${item.category.name}`}
+                                	data-name={item.category.name}
+                                	className="tag-2"
+                                	onClick={this.loadCategory}
+                                	>
+                                	{item.category.name}
+                                </Link>
                               </div>
                               <a target="_blank" href={`http://${item.website}`} className="col-wd-4 get-it-btn">Get It</a>
                             </div>
@@ -61,7 +95,7 @@ class CategoryPage extends Component{
           </div>
         </div>
       </div>
-    ) 
+    )
   }
 };
 

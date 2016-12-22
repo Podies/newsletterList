@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import * as actions from '../actions/index';
+import * as actions from '../actions';
 
 class Category extends Component {
   constructor(props){
