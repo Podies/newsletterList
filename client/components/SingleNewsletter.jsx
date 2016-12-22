@@ -6,8 +6,7 @@ const SingleNewsletters = (props) => (
         <div className="col">
           <div className="newsletter-card">
             <h2 className="col-wd-12">{props.newsletter.name}</h2>
-            <p className="col-wd-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p className="col-wd-12">{props.newsletter.description}</p>
             <div className="metadata col-wd-12">
               <div className="tag-details col-wd-8">
                 <span className="tag-1">{props.newsletter.category.name}</span>

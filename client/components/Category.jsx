@@ -42,7 +42,7 @@ class Category extends Component {
 
   render() {
     const { category } = this.props;
-    let subCategoryList;
+    let subCategoryList, dropDownTriangle;
     if (category.subcategories.length !== 0) {
       subCategoryList = (
         <ul className={this.state.subMenuClassName} id="submenu">
@@ -57,15 +57,17 @@ class Category extends Component {
             }
         </ul>
       )
+      dropDownTriangle = (<span className="triangle"></span>)
     } else {
       subCategoryList = (<ul style={{display: 'none'}}></ul>)
+      dropDownTriangle = (<span style={{display: 'none'}}></span>)
     }
     return(
       <li className="category-tab" onMouseOver={this.changeSubmenuAlignment}>
         <Link to={`/${category.name}`} onClick={this.loadCategory} data-name={category.name} className="category-name">
           <i className={`fa fa-${category.className}`} aria-hidden="true"></i>
           <p>{category.name}</p>
-          <span className="triangle"></span>
+          { dropDownTriangle }
         </Link>
         { subCategoryList }
       </li>
