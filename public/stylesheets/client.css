@@ -968,7 +968,8 @@ header .main-header .primary-nav .right-content .submit-btn:hover:before, header
 /*subscribe page css*/
 
 .subscribe-category{
-	margin-top: 50px;
+	margin-top: 25px;
+	margin-bottom: 25px;
 	padding-left: 8.3334%;
 }
 .heading-subscribe{
@@ -1046,4 +1047,30 @@ input[type=checkbox]:checked + label::after {
   -webkit-transform: scale(1);
   transform: scale(1);
   opacity: 1;
+}
+.email-signup{
+	text-align: center;
+}
+.email-subscription{
+	text-align: center;
+	margin-bottom: 40px;
+}
+.form-control{
+	height: 50px;
+	padding: 12px 18px;
+}
+.email-input {
+	width: 400px;
+}
+.email-input::-webkit-input-placeholder {
+	color: #F15B2E;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+}
+.subscribe-btn {
+	background: #F15B2E;
+	color: #fff;
+	outline: 0;
+	border: 0;
+	cursor: pointer;
 }

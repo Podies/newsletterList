@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import SubscribeGrid from './SubscribeGrid'
 import * as actions from '../actions';
+import * as ajaxCalls from '../actions/ajaxCalls';
 
 class SubscribePage extends Component {
 	constructor(props) {
@@ -10,8 +11,21 @@ class SubscribePage extends Component {
 			selectedSubCategories: []
 		};
 		this.toggleSubcategorySelect = this.toggleSubcategorySelect.bind(this);
+		this.subscribeSubmit = this.subscribeSubmit.bind(this);
 	}
-
+	subscribeSubmit(e){
+		e.preventDefault();
+		const email = this.refs.subscribeEmail.value;
+		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		var check = re.test(email);
+		if (check) {
+			ajaxCalls.ajaxSubscribe({ email, subcategories: this.state.selectedSubCategories }).then((res) => {
+				this.context.router.push('/success');
+			});
+		} else {
+			alert('Invalid Email Address');
+		}
+	}
 	toggleSubcategorySelect(subcategoryId) {
 		// toggle from current state
 		const index = this.state.selectedSubCategories.indexOf(subcategoryId);
@@ -20,7 +34,6 @@ class SubscribePage extends Component {
 		} else {
 			this.state.selectedSubCategories.splice(index, 1);
 		}
-
 		this.setState({ selectedSubCategories: this.state.selectedSubCategories });
 	}
 
@@ -39,6 +52,10 @@ class SubscribePage extends Component {
 							/>
 						))
 					}
+					<div className="email-subscription">
+							<input className="form-control email-input" ref="subscribeEmail" placeholder="Enter your email" type="email" name="search" id="search" />
+							<input className="form-control subscribe-btn" type="submit" onClick={this.subscribeSubmit} value="Subscribe" />
+					</div>
 				</div>
 			</div>
 		)
@@ -46,5 +63,9 @@ class SubscribePage extends Component {
 }
 
 SubscribePage.need = [() => actions.fetchCategory()];
+
+SubscribePage.contextTypes = {
+	router: React.PropTypes.object,
+}
 
 export default SubscribePage;

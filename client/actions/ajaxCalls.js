@@ -53,6 +53,18 @@ const ajaxFetchSearchNewsletters = (searchTerm) => {
     });
 }
 
+const ajaxSubscribe = (info) => {
+  let url = endpoint+'/api/user/subscribe';
+
+  return axios.post(url, info)
+    .then((response) => {
+      // if (response.status !== 200) {
+      //   return Promise.reject('No Newsletter Found');
+      // }
+      return console.log('Submitted Successfully');
+    });
+}
+
 export {
-  ajaxFetchCategory, ajaxFetchNewsletters, ajaxFetchHandPicked, ajaxFetchSearchNewsletters
+  ajaxFetchCategory, ajaxFetchNewsletters, ajaxFetchHandPicked, ajaxFetchSearchNewsletters, ajaxSubscribe
 };

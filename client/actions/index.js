@@ -57,6 +57,7 @@ const searchNewsletters = (data) => {
   };
 };
 
+
 export  {
   fetchCategory, fetchNewsletters, fetchHandPicked, searchNewsletters
 }

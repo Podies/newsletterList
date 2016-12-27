@@ -36,7 +36,10 @@ class Header extends Component {
                 </Link>
               </div>
               <div className="right-content col-xs-10 col-sm-9 col-md-8 col-wd-10">
-                <input type="search" ref="searchText" name="Search" onKeyDown={this.searchNewsletters} placeholder="Search Newsletters" className="search col-xs-2 col-sm-3 col-md-4 col-wd-5" />
+                <input type="search" ref="searchText" name="Search"
+                onKeyDown={this.searchNewsletters}
+                placeholder="Search Newsletters"
+                className="search col-xs-2 col-sm-3 col-md-4 col-wd-5" />
               </div>
             </div>
           </div>

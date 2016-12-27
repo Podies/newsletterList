@@ -64,7 +64,7 @@ app.use('/admin', admin);
 app.use('/api', api);
 
 app.use('*', function(req, res) {
-  
+
   match({ routes: routes, location: req.originalUrl },
     (error, redirectLocation, renderProps) => {
     let initialState = {};
@@ -72,7 +72,7 @@ app.use('*', function(req, res) {
 
     if (error) {
       res.status(500).send(error.message)
-    } else 
+    } else
 
     if (redirectLocation) {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search)
@@ -83,7 +83,7 @@ app.use('*', function(req, res) {
       return fetchComponentData(store, renderProps.components, renderProps.params)
         .then(() => {
           const body = renderToString(
-            <Provider store={store}>       
+            <Provider store={store}>
               <RouterContext {...renderProps} />
             </Provider>
           );
