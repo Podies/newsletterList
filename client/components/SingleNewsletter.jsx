@@ -31,8 +31,8 @@ class SingleNewsletters extends Component {
       <div className="col-xs-3 col-sm-4 col-md-6 card">
         <div className="col">
           <div className="newsletter-card">
-            <h2 className="col-wd-12">{this.props.newsletter.name}</h2>
-            <p className="col-wd-12">{this.props.newsletter.description}</p>
+            <h2 className="col-wd-12">{props.newsletter.name}</h2>
+            <p className="col-wd-12">{props.newsletter.description}</p>
             <div className="metadata col-wd-12">
               <div className="tag-details col-wd-8">
                 <Link to={`/${category.name}`} className="tag-1" onClick={this.loadCategory} data-name={category.name}>{category.name}</Link>
