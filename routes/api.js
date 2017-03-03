@@ -125,12 +125,14 @@ router.post('./user/subscribe', function(req, res) {
 });
 
 router.get('/search/:query',function(req, res) {
-  Newsletter.find({$text: { $search: req.body.query}}).exec(function(err, data) {
+  console.log(req.params.query);
+  Newsletter.find({$text: { $search: req.params.query}}).populate('category', 'name')
+  .populate('subcategory', 'name').exec(function(err, data) {
     if(err) {
       console.log(err);
     }
-    res.json(search: data);
-  })
+    res.json({"search": data});
+  });
 });
 
 router.post('/submit', function(req, res) {
