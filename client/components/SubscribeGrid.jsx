@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SubcategorySelectBox from './SubcategorySelectBox';
+import SubcategorySelectBox from './SubCategorySelectBox';
 
 class SubscribeGrid extends Component {
 	constructor(props){
