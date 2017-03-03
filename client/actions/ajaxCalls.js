@@ -20,7 +20,7 @@ const ajaxFetchNewsletters = (params) => {
   if(params.category && params.subcategory) {
     url = endpoint+'/api/subcategories/'+params.subcategory+'/newsletters';
   }
-  
+
   return axios.get(url)
     .then((response) => {
       if (response.status !== 200) {
@@ -32,7 +32,7 @@ const ajaxFetchNewsletters = (params) => {
 
 const ajaxFetchHandPicked = () => {
   let url = endpoint+'/api/handpicked/';
-  
+
   return axios.get(url)
     .then((response) => {
       if (response.status !== 200) {
@@ -41,7 +41,30 @@ const ajaxFetchHandPicked = () => {
       return response.data;
     });
 }
+const ajaxFetchSearchNewsletters = (searchTerm) => {
+  let url = endpoint+'/api/search/'+searchTerm;
+
+  return axios.get(url)
+    .then((response) => {
+      if (response.status !== 200) {
+        return Promise.reject('No Newsletter Found');
+      }
+      return response.data;
+    });
+}
+
+const ajaxSubscribe = (info) => {
+  let url = endpoint+'/api/user/subscribe';
+
+  return axios.post(url, info)
+    .then((response) => {
+      // if (response.status !== 200) {
+      //   return Promise.reject('No Newsletter Found');
+      // }
+      return console.log('Submitted Successfully');
+    });
+}
 
 export {
-  ajaxFetchCategory, ajaxFetchNewsletters, ajaxFetchHandPicked
+  ajaxFetchCategory, ajaxFetchNewsletters, ajaxFetchHandPicked, ajaxFetchSearchNewsletters, ajaxSubscribe
 };

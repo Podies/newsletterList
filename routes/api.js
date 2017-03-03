@@ -93,10 +93,15 @@ router.get('/handpicked', function(req, res) {
 
 });
 
-router.post('./user/subscribe', function(req, res) {
-  User.findOne({email: req.body.email}).exec(function(err, user){
-    if(!req.body.email) {
-      return res.status(400).send({message: 'Email is must.'})
+router.post('/user/subscribe', function(req, res) {
+	function isEmailAddress(str) {
+   var pattern =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+   return pattern.test(str);  // returns a boolean
+	}
+	var emailId = req.body.email;
+	User.findOne({email: emailId}).exec(function(err, user){
+    if(!emailId && !isEmailAddress(emailId)) {
+      return res.status(400).send({message: 'Enter Valid Email.'})
     }
 
     if(user) {
@@ -114,26 +119,25 @@ router.post('./user/subscribe', function(req, res) {
     } else {
       // make new user with subscribed subcategories
       var newUser = new User({email: req.body.email, subcategorySubscribed: req.body.subcategory});
-      newUser.save(function(err, savedUser) {
-        if(err) {
-          console.log(err);
-        }
-      })
+      newUser.save();
     }
+
+    res.json({ message: 'Thanks for subscribing.' });
 
   });
 });
 
-router.get('/search/:query',function(req, res) {
-  console.log(req.params.query);
-  Newsletter.find({$text: { $search: req.params.query}}).populate('category', 'name')
-  .populate('subcategory', 'name').exec(function(err, data) {
-    if(err) {
-      console.log(err);
-    }
-    res.json({"search": data});
-  });
-});
+
+// router.get('/search/:query',function(req, res) {
+//   console.log(req.params.query);
+//   Newsletter.find({$text: { $search: req.params.query}}).populate('category', 'name')
+//   .populate('subcategory', 'name').exec(function(err, data) {
+//     if(err) {
+//       console.log(err);
+//     }
+//     res.json({"search": data});
+//   });
+// });
 
 router.post('/submit', function(req, res) {
   var name = req.body.name;
@@ -153,4 +157,14 @@ router.post('/submit', function(req, res) {
     }
   });
 });
+
+router.get('/search/:searchTerm', function(req, res){
+	Newsletter.find({$text: { $search: req.params.searchTerm}}).populate('category', 'name').populate('subcategory', 'name').exec(function(err, data){
+		if (err) {
+			console.log(err);
+		}
+		res.json({search: data});
+	});
+});
+
 module.exports = router;

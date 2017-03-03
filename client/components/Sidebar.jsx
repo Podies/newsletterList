@@ -34,9 +34,9 @@ class Sidebar extends Component {
       subCategoryList = (
         <ul className="sub-category-list-up col-wd-12">
           {
-            category.subcategories.map((subcategory, i) => 
+            category.subcategories.map((subcategory, i) =>
               <li className="col-wd-12" key={i}>
-                <Link to={`/${category.name}/${subcategory.name}`} className="col-wd-12" onClick={this.loadSubCategory} data-category={category.name} data-subcategory={subcategory.name} >{subcategory.name}</Link>
+                <Link to={`/category/${category.name}/${subcategory.name}`} className="col-wd-12" onClick={this.loadSubCategory} data-category={category.name} data-subcategory={subcategory.name} >{subcategory.name}</Link>
               </li>
             )
           }

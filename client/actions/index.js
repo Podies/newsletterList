@@ -24,7 +24,7 @@ const fetchNewsletters = (params) => {
         //check error type - 404, 500,
         if (err.response.status === 404) {
           dispatch(actions.show404Page(err))
-        } 
+        }
         dispatch(actions.updateFailed(err));
       }
     );
@@ -44,6 +44,20 @@ const fetchHandPicked = () => {
   };
 }
 
+const searchNewsletters = (data) => {
+  return (dispatch) => {
+    return api.ajaxFetchSearchNewsletters(data).then(
+      (responseData) => {
+        dispatch(actions.addNewsletters(responseData.search));
+      },
+      (err) => {
+        dispatch(actions.updateFailed(err));
+      }
+    );
+  };
+};
+
+
 export  {
-  fetchCategory, fetchNewsletters, fetchHandPicked
+  fetchCategory, fetchNewsletters, fetchHandPicked, searchNewsletters
 }
