@@ -12,4 +12,4 @@ render(
     <Router children={routes} history={history} />
   </Provider>
   , document.getElementById('app')
-  );
+);
