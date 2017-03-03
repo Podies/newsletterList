@@ -1,9 +1,9 @@
 import axios from 'axios';
-const endpoint = 'http://localhost:8000';
+// const endpoint = 'http://localhost:8000';
 
 //fetch category
 const ajaxFetchCategory = (data) => {
-  const url = endpoint+'/api/categories';
+  const url = '/api/categories';
 
   return axios.get(url)
     .then((response) => {
@@ -16,9 +16,9 @@ const ajaxFetchCategory = (data) => {
 
 //fetch newsletters
 const ajaxFetchNewsletters = (params) => {
-  let url = endpoint+'/api/categories/'+params.category+'/newsletters';
+  let url = '/api/categories/'+params.category+'/newsletters';
   if(params.category && params.subcategory) {
-    url = endpoint+'/api/subcategories/'+params.subcategory+'/newsletters';
+    url = '/api/subcategories/'+params.subcategory+'/newsletters';
   }
 
   return axios.get(url)
@@ -31,7 +31,7 @@ const ajaxFetchNewsletters = (params) => {
 };
 
 const ajaxFetchHandPicked = () => {
-  let url = endpoint+'/api/handpicked/';
+  let url = '/api/handpicked/';
 
   return axios.get(url)
     .then((response) => {
@@ -42,7 +42,7 @@ const ajaxFetchHandPicked = () => {
     });
 }
 const ajaxFetchSearchNewsletters = (searchTerm) => {
-  let url = endpoint+'/api/search/'+searchTerm;
+  let url = '/api/search/'+searchTerm;
 
   return axios.get(url)
     .then((response) => {
@@ -54,7 +54,7 @@ const ajaxFetchSearchNewsletters = (searchTerm) => {
 }
 
 const ajaxSubscribe = (info) => {
-  let url = endpoint+'/api/user/subscribe';
+  let url = '/api/user/subscribe';
 
   return axios.post(url, info)
     .then((response) => {
