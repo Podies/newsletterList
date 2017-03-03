@@ -27,22 +27,26 @@ mongoose.connect('mongodb://localhost:27017/podiesnewsletter', function(err, con
 var db = mongoose.connection;
 
 // Setup webpack hot middleware.
-(function() {
-  // Step 1: Create & configure a webpack compiler
-  var webpack = require('webpack');
-  var webpackConfig = require('./webpack.config');
-  var compiler = webpack(webpackConfig);
+if(process.env.NODE_ENV == 'development') {
+  (function() {
+    // Step 1: Create & configure a webpack compiler
+    var webpack = require('webpack');
+    var webpackConfig = require('./webpack.config');
+    var compiler = webpack(webpackConfig);
 
-  // Step 2: Attach the dev middleware to the compiler & the server
-  app.use(require("webpack-dev-middleware")(compiler, {
-    noInfo: true, publicPath: webpackConfig.output.publicPath
-  }));
+    // Step 2: Attach the dev middleware to the compiler & the server
+    app.use(require("webpack-dev-middleware")(compiler, {
+      noInfo: true, publicPath: webpackConfig.output.publicPath
+    }));
 
-  // Step 3: Attach the hot middleware to the compiler & the server
-  app.use(require("webpack-hot-middleware")(compiler, {
-    log: console.log, path: '/__webpack_hmr', heartbeat: 10 * 1000
-  }));
-})();
+    // Step 3: Attach the hot middleware to the compiler & the server
+    app.use(require("webpack-hot-middleware")(compiler, {
+      log: console.log, path: '/__webpack_hmr', heartbeat: 10 * 1000
+    }));
+  })();
+
+}
+
 
 // var routes = require('./routes/index');
 var admin = require('./routes/admin');
@@ -77,6 +81,7 @@ app.use('*', function(req, res) {
     if (redirectLocation) {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search)
     } else if (renderProps) {
+      const jsPath = (process.env.NODE_ENV == 'development') ? '/static/bundle.js' : '/dist/bundle/bundle.js';
       // You can also check renderProps.components or renderProps.routes for
       // your "not found" component or route respectively, and send a 404 as
       // below, if you're using a catch-all route.
@@ -87,7 +92,7 @@ app.use('*', function(req, res) {
               <RouterContext {...renderProps} />
             </Provider>
           );
-          res.render('index', { body: body, initialState: JSON.stringify(store.getState()) });
+          res.render('index', { body: body, initialState: JSON.stringify(store.getState()), jsPath });
         })
     } else {
       res.status(404).send('Not found')
