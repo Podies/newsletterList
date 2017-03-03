@@ -4,12 +4,12 @@ var Newsletter = require('../models/newsletterModel');
 var Category = require('../models/categoryModel');
 var Subcategory = require('../models/subCategory');
 var HandPicked = require('../models/handPicked');
-
+var config = require('../config');
 
 function verifyPassword(req, res, next) {
   var password = req.body.password;
 
-  if(password !== 'podiesInRakkar') {
+  if(password !== config.password) {
     return res.status(400).send({ message: 'Not Proper Data Sent.' });
   }
 

@@ -1,5 +1,5 @@
 import axios from 'axios';
-const endpoint = process.env.NODE_ENV == 'development' ? 'http://localhost:8080' : 'http://128.199.86.193';
+const endpoint = process.env.NODE_ENV == 'development' ? 'http://localhost:8080' : 'http://newsletterlist.xyz';
 
 //fetch category
 const ajaxFetchCategory = (data) => {
