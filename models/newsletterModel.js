@@ -5,6 +5,7 @@ var Schema = mongoose.Schema
 
 var newsletterSchema = Schema({
   name: String,
+  description: String,
   website: String,
   category: {type: Schema.Types.ObjectId, ref: 'Category'},
   subcategory: {type: Schema.Types.ObjectId, ref: 'Subcategory'},

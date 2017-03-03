@@ -8,19 +8,35 @@
 	<link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500,600,700,800" rel="stylesheet">
 	<link href="https://use.fontawesome.com/306efd2e67.css" media="all" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script>
+		// var ul = document.getElementById('submenu');
+		// ul.addEventListener('mousedown', function(e) {
+		// if(e.screenX > e.view.innerWidth / 2){
+		// ul.classList.remove('sub-category-list-right');
+		// ul.classList.add('sub-category-list-left');
+		// }else{
+		// 	return;
+		// }
+		// });
+	</script>
 </head>
 <body>
   <div class="container">
-    <img src="img/newsletters-banner.png" alt="Hero-Banner" class="hero-banner">
+    <img src="img/newsletters-banner.png" alt="Hero-Banner" class="hero-banner col-sm-12 col-md-12 col-wd-12">
     <header>
 	    <div class="grid">
-				<div class="primary-nav col-wd-12">
-					<div class="brand col-wd-3">
-						<a href="#" class="brand-name">Brand-Name</a>
-					</div>
-					<div class="right-content col-wd-9">
-						<input type="search" name="Search" placeholder="Search">
-						<a href="#">Submit</a>
+		    <div class="col main-header">
+					<div class="primary-nav col-wd-12">
+						<div class="brand col-xs-2 col-sm-3 col-md-4 col-wd-2">
+							<a href="index.html" class="brand-name">
+								<img src="img/newsletter-logo.png" alt="Newsletter-logo">
+								<span>Newsletter<br>List</span>
+							</a>
+						</div>
+						<div class="right-content col-xs-10 col-sm-9 col-md-8 col-wd-10">
+							<input type="search" name="Search" placeholder="Search" class="search col-xs-2 col-sm-3 col-md-4 col-wd-5">
+							<a href="#" class="submit-btn">Submit</a>
+						</div>
 					</div>
 				</div>
 			</div>	
@@ -31,280 +47,390 @@
 	  			<div class="col">
 	  			  <h1>Categories</h1>
 	  			  <ul class="categories col-wd-12">
-		  			  <li class="category-tab">
-		  			  	<a href="#" class="category-name">
-			  			  	<i class="fa fa-cogs" aria-hidden="true"></i>
-									<p>Technology</p>
-									<span class="triangle"></span>
-								</a>
-		  			  	<ul class="sub-category-list">
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-		  			  	</ul>
-		  			  </li>
-		  			  <li class="category-tab">
-		  			  	<a href="#" class="category-name">
-		  			  	  <i class="fa fa-briefcase" aria-hidden="true"></i>
-		  			  	  <p>Business</p>
-		  			  	  <span class="triangle"></span>
-		  			  	</a>
-		  			  	<ul class="sub-category-list">
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-		  			  	</ul>
-		  			  </li>
-		  			  <li class="category-tab">
-		  			  	<a href="#" class="category-name">
-		  			  	  <i class="fa fa-laptop" aria-hidden="true"></i>
-		  			  	  <p>Programming</p>
-		  			  	  <span class="triangle"></span>
-		  			  	</a>
-		  			  	<ul class="sub-category-list">
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-		  			  	</ul>
-		  			  </li>
-		  			  <li class="category-tab">
-		  			  	<a href="#" class="category-name">
-		  			  	  <i class="fa fa-flask" aria-hidden="true"></i>
-		  			  	  <p>Science</p>
-		  			  	  <span class="triangle"></span>
-		  			  	</a>
-		  			  	<ul class="sub-category-list">
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-		  			  	</ul>
-		  			  </li>
-		  			  <li class="category-tab">
-		  			  	<a href="#" class="category-name">
-		  			  	  <i class="fa fa-medkit" aria-hidden="true"></i>
-		  			  	  <p>Health</p>
-		  			  	  <span class="triangle"></span>
-		  			  	</a>
-		  			  	<ul class="sub-category-list">
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-		  			  	</ul>
-		  			  </li>
-		  			  <li class="category-tab">
-		  			  	<a href="#" class="category-name">
-		  			  	  <i class="fa fa-gamepad" aria-hidden="true"></i>
-		  			  	  <p>Games</p>
-		  			  	  <span class="triangle"></span>
-		  			  	</a>
-		  			  	<ul class="sub-category-list">
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-		  			  	</ul>
-		  			  </li>
-		  			  <li class="category-tab">
-		  			  	<a href="#" class="category-name">
-		  			  	  <i class="fa fa-pencil" aria-hidden="true"></i>
-		  			  	  <p>Design</p>
-		  			  	  <span class="triangle"></span>
-		  			  	</a>
-		  			  	<ul class="sub-category-list">
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-		  			  	</ul>
-		  			  </li>
-		  			  <li class="category-tab">
-		  			  	<a href="#" class="category-name">
-		  			  	  <i class="fa fa-futbol-o" aria-hidden="true"></i>
-		  			  	  <p>Sports</p>
-		  			  	  <span class="triangle"></span>
-		  			  	</a>
-		  			  	<ul class="sub-category-list">
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-		  			  	</ul>
-		  			  </li>
-		  			  <li class="category-tab">
-		  			  	<a href="#" class="category-name">
-		  			  	  <i class="fa fa-heart-o" aria-hidden="true"></i>
-		  			  	  <p>Fitness</p>
-		  			  	  <span class="triangle"></span>
-		  			  	</a>
-		  			  	<ul class="sub-category-list">
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-		  			  	</ul>
-		  			  </li>
-		  			  <li class="category-tab">
-		  			  	<a href="#" class="category-name">
-		  			  	  <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-		  			  	  <p>Education</p>
-		  			  	  <span class="triangle"></span>
-		  			  	</a>
-		  			  	<ul class="sub-category-list">
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-		  			  	</ul>
-		  			  </li>
-		  			  <li class="category-tab">
-		  			  	<a href="#" class="category-name">
-		  			  	  <i class="fa fa-book" aria-hidden="true"></i>
-		  			  	  <p>Training</p>
-		  			  	  <span class="triangle"></span>
-		  			  	</a>
-		  			  	<ul class="sub-category-list">
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-		  			  	</ul>
-		  			  </li>
-		  			  <li class="category-tab">
-		  			  	<a href="#" class="category-name">
-		  			  	  <i class="fa fa-file-video-o" aria-hidden="true"></i>
-		  			  	  <p>Tutorials</p>
-		  			  	  <span class="triangle"></span>
-		  			  	</a>
-		  			  	<ul class="sub-category-list">
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-		  			  	</ul>
-		  			  </li>
-		  			  <li class="category-tab">
-		  			  	<a href="#" class="category-name">
-		  			  	  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-		  			  	  <p>E-commerce</p>
-		  			  	  <span class="triangle"></span>
-		  			  	</a>
-		  			  	<ul class="sub-category-list">
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
-	  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
-		  			  	</ul>
-		  			  </li>
+		  			  <div class="col">
+			  			  <li class="category-tab">
+			  			  	<a href="#" class="category-name">
+				  			  	<i class="fa fa-cogs" aria-hidden="true"></i>
+										<p>Technology</p>
+										<span class="triangle"></span>
+									</a>
+			  			  	<ul class="sub-category-list-right">
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+			  			  	</ul>
+			  			  </li>
+			  			  <li class="category-tab">
+			  			  	<a href="#" class="category-name">
+			  			  	  <i class="fa fa-briefcase" aria-hidden="true"></i>
+			  			  	  <p>Business</p>
+			  			  	  <span class="triangle"></span>
+			  			  	</a>
+			  			  	<ul class="sub-category-list-right">
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+			  			  	</ul>
+			  			  </li>
+			  			  <li class="category-tab">
+			  			  	<a href="#" class="category-name">
+			  			  	  <i class="fa fa-laptop" aria-hidden="true"></i>
+			  			  	  <p>Programming</p>
+			  			  	  <span class="triangle"></span>
+			  			  	</a>
+			  			  	<ul class="sub-category-list-right">
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+			  			  	</ul>
+			  			  </li>
+			  			  <li class="category-tab">
+			  			  	<a href="#" class="category-name">
+			  			  	  <i class="fa fa-flask" aria-hidden="true"></i>
+			  			  	  <p>Science</p>
+			  			  	  <span class="triangle"></span>
+			  			  	</a>
+			  			  	<ul class="sub-category-list-right">
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+			  			  	</ul>
+			  			  </li>
+			  			  <li class="category-tab">
+			  			  	<a href="#" class="category-name">
+			  			  	  <i class="fa fa-medkit" aria-hidden="true"></i>
+			  			  	  <p>Health</p>
+			  			  	  <span class="triangle"></span>
+			  			  	</a>
+			  			  	<ul class="sub-category-list-right">
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+			  			  	</ul>
+			  			  </li>
+			  			  <li class="category-tab">
+			  			  	<a href="#" class="category-name">
+			  			  	  <i class="fa fa-gamepad" aria-hidden="true"></i>
+			  			  	  <p>Games</p>
+			  			  	  <span class="triangle"></span>
+			  			  	</a>
+			  			  	<ul class="sub-category-list-left">
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+			  			  	</ul>
+			  			  </li>
+			  			  <li class="category-tab">
+			  			  	<a href="#" class="category-name">
+			  			  	  <i class="fa fa-pencil" aria-hidden="true"></i>
+			  			  	  <p>Design</p>
+			  			  	  <span class="triangle"></span>
+			  			  	</a>
+			  			  	<ul class="sub-category-list-left">
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+			  			  	</ul>
+			  			  </li>
+			  			  <li class="category-tab">
+			  			  	<a href="#" class="category-name">
+			  			  	  <i class="fa fa-futbol-o" aria-hidden="true"></i>
+			  			  	  <p>Sports</p>
+			  			  	  <span class="triangle"></span>
+			  			  	</a>
+			  			  	<ul class="sub-category-list-left">
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+			  			  	</ul>
+			  			  </li>
+			  			  <li class="category-tab">
+			  			  	<a href="#" class="category-name">
+			  			  	  <i class="fa fa-heart-o" aria-hidden="true"></i>
+			  			  	  <p>Fitness</p>
+			  			  	  <span class="triangle"></span>
+			  			  	</a>
+			  			  	<ul class="sub-category-list-left">
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+			  			  	</ul>
+			  			  </li>
+			  			  <li class="category-tab">
+			  			  	<a href="#" class="category-name">
+			  			  	  <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+			  			  	  <p>Education</p>
+			  			  	  <span class="triangle"></span>
+			  			  	</a>
+			  			  	<ul class="sub-category-list-right">
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+			  			  	</ul>
+			  			  </li>
+			  			  <li class="category-tab">
+			  			  	<a href="#" class="category-name">
+			  			  	  <i class="fa fa-book" aria-hidden="true"></i>
+			  			  	  <p>Training</p>
+			  			  	  <span class="triangle"></span>
+			  			  	</a>
+			  			  	<ul class="sub-category-list-right">
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+			  			  	</ul>
+			  			  </li>
+			  			  <li class="category-tab">
+			  			  	<a href="#" class="category-name">
+			  			  	  <i class="fa fa-file-video-o" aria-hidden="true"></i>
+			  			  	  <p>Tutorials</p>
+			  			  	  <span class="triangle"></span>
+			  			  	</a>
+			  			  	<ul class="sub-category-list-right">
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+			  			  	</ul>
+			  			  </li>
+			  			  <li class="category-tab">
+			  			  	<a href="#" class="category-name">
+			  			  	  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+			  			  	  <p>E-commerce</p>
+			  			  	  <span class="triangle"></span>
+			  			  	</a>
+			  			  	<ul class="sub-category-list-right">
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-1</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-2</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-3</a></li>
+		  			  	    <li class=""><a href="#" class="sub-category">Sub-Category-4</a></li>
+			  			  	</ul>
+			  			  </li>
+			  			</div>
 	  			  </ul>
+	  			</div>
+	  			<div class="handpicked-cards">
+			  		<div class="col-xs-3 col-sm-4 col-md-6 card">
+				  		<div class="col">
+							  <div class="newsletter-card">
+							    <h2 class="col-wd-12">Website-Name</h2>
+							    <p class="col-wd-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							    tempor incididunt ut labore et dolore magna aliqua.</p>
+							    <div class="metadata col-wd-12">
+								    <div class="tag-details col-wd-8">
+					  			    <span class="tag-1">Sub-Category Name</span>
+					  			    <span class="tag-2">Category Name</span>
+								    </div>
+								    <a href="#" class="col-wd-4 get-it-btn">Get It</a>
+							    </div>
+							  </div>
+							</div>
+			  		</div>
+	  			</div>
+	  			<div class="handpicked-cards">
+			  		<div class="col-xs-3 col-sm-4 col-md-6 card">
+				  		<div class="col">
+							  <div class="newsletter-card">
+							    <h2 class="col-wd-12">Website-Name</h2>
+							    <p class="col-wd-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							    tempor incididunt ut labore et dolore magna aliqua.</p>
+							    <div class="metadata col-wd-12">
+								    <div class="tag-details col-wd-8">
+					  			    <span class="tag-1">Sub-Category Name</span>
+					  			    <span class="tag-2">Category Name</span>
+								    </div>
+								    <a href="#" class="col-wd-4 get-it-btn">Get It</a>
+							    </div>
+							  </div>
+							</div>
+			  		</div>
+	  			</div>
+	  			<div class="handpicked-cards">
+			  		<div class="col-xs-3 col-sm-4 col-md-6 card">
+				  		<div class="col">
+							  <div class="newsletter-card">
+							    <h2 class="col-wd-12">Website-Name</h2>
+							    <p class="col-wd-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							    tempor incididunt ut labore et dolore magna aliqua.</p>
+							    <div class="metadata col-wd-12">
+								    <div class="tag-details col-wd-8">
+					  			    <span class="tag-1">Sub-Category Name</span>
+					  			    <span class="tag-2">Category Name</span>
+								    </div>
+								    <a href="#" class="col-wd-4 get-it-btn">Get It</a>
+							    </div>
+							  </div>
+							</div>
+			  		</div>
+	  			</div>
+	  			<div class="handpicked-cards">
+			  		<div class="col-xs-3 col-sm-4 col-md-6 card">
+				  		<div class="col">
+							  <div class="newsletter-card">
+							    <h2 class="col-wd-12">Website-Name</h2>
+							    <p class="col-wd-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							    tempor incididunt ut labore et dolore magna aliqua.</p>
+							    <div class="metadata col-wd-12">
+								    <div class="tag-details col-wd-8">
+					  			    <span class="tag-1">Sub-Category Name</span>
+					  			    <span class="tag-2">Category Name</span>
+								    </div>
+								    <a href="#" class="col-wd-4 get-it-btn">Get It</a>
+							    </div>
+							  </div>
+							</div>
+			  		</div>
+	  			</div>
+	  			<div class="handpicked-cards">
+			  		<div class="col-xs-3 col-sm-4 col-md-6 card">
+				  		<div class="col">
+							  <div class="newsletter-card">
+							    <h2 class="col-wd-12">Website-Name</h2>
+							    <p class="col-wd-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							    tempor incididunt ut labore et dolore magna aliqua.</p>
+							    <div class="metadata col-wd-12">
+								    <div class="tag-details col-wd-8">
+					  			    <span class="tag-1">Sub-Category Name</span>
+					  			    <span class="tag-2">Category Name</span>
+								    </div>
+								    <a href="#" class="col-wd-4 get-it-btn">Get It</a>
+							    </div>
+							  </div>
+							</div>
+			  		</div>
+	  			</div>
+	  			<div class="handpicked-cards">
+			  		<div class="col-xs-3 col-sm-4 col-md-6 card">
+				  		<div class="col">
+							  <div class="newsletter-card">
+							    <h2 class="col-wd-12">Website-Name</h2>
+							    <p class="col-wd-12">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							    tempor incididunt ut labore et dolore magna aliqua.</p>
+							    <div class="metadata col-wd-12">
+								    <div class="tag-details col-wd-8">
+					  			    <span class="tag-1">Sub-Category Name</span>
+					  			    <span class="tag-2">Category Name</span>
+								    </div>
+								    <a href="#" class="col-wd-4 get-it-btn">Get It</a>
+							    </div>
+							  </div>
+							</div>
+			  		</div>
 	  			</div>
   			</div>
   		</div>

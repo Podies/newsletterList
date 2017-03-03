@@ -7,8 +7,19 @@ var bodyParser = require('body-parser');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
+import React from 'react';
+import { renderToString } from 'react-dom/server';
+import { match, RouterContext } from 'react-router';
+import routes from './client/routes';
+import { Provider } from 'react-redux';
+
+import { createStore, applyMiddleware } from 'redux';
+import rootReducer from './client/reducers/index';
+import fetchComponentData from './utils/fetchData';
+import thunk from 'redux-thunk';
+
+
 var app = express();
-// mongoose.connect('mongodb://ravi11o:podies.xyz@ds119738.mlab.com:19738/podiesnewsletter');
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/podiesnewsletter', function(err, con){
     console.log(err, 'connected?')
@@ -17,7 +28,6 @@ var db = mongoose.connection;
 
 // Setup webpack hot middleware.
 (function() {
-
   // Step 1: Create & configure a webpack compiler
   var webpack = require('webpack');
   var webpackConfig = require('./webpack.config');
@@ -34,23 +44,9 @@ var db = mongoose.connection;
   }));
 })();
 
-var routes = require('./routes/index');
+// var routes = require('./routes/index');
 var admin = require('./routes/admin');
 var api = require('./routes/api')
-
-
-// var db = require('./lib/db');
-
-/*options = {
-    onconfig: function (config, next) {
-        /*
-         * Add any additional config setup or overrides here. `config` is an initialized
-         * `confit` (https://github.com/krakenjs/confit/) configuration object.
-         
-        db.config(config.get('databaseConfig'));
-        next(null, config);
-    }
-}; */
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -67,26 +63,45 @@ app.use('/dist', express.static(path.join(__dirname, 'dist')));
 app.use('/admin', admin);
 app.use('/api', api);
 
-// app.use('*', function(req, res) {
-//   match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
-//     if (error) {
-//       res.status(500).send(error.message)
-//     } else if (redirectLocation) {
-//       res.redirect(302, redirectLocation.pathname + redirectLocation.search)
-//     } else if (renderProps) {
-//       // You can also check renderProps.components or renderProps.routes for
-//       // your "not found" component or route respectively, and send a 404 as
-//       // below, if you're using a catch-all route.
-//       res.status(200).send(renderToString(<RouterContext {...renderProps} />))
-//     } else {
-//       res.status(404).send('Not found')
-//     }
-//   })
-// });
-
 app.use('*', function(req, res) {
-  res.render('index');
-})
+
+  match({ routes: routes, location: req.originalUrl },
+    (error, redirectLocation, renderProps) => {
+    let initialState = {};
+    const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
+
+    if (error) {
+      res.status(500).send(error.message)
+    } else
+
+    if (redirectLocation) {
+      res.redirect(302, redirectLocation.pathname + redirectLocation.search)
+    } else if (renderProps) {
+      // You can also check renderProps.components or renderProps.routes for
+      // your "not found" component or route respectively, and send a 404 as
+      // below, if you're using a catch-all route.
+      return fetchComponentData(store, renderProps.components, renderProps.params)
+        .then(() => {
+          const body = renderToString(
+            <Provider store={store}>
+              <RouterContext {...renderProps} />
+            </Provider>
+          );
+          res.render('index', { body: body, initialState: JSON.stringify(store.getState()) });
+        })
+    } else {
+      res.status(404).send('Not found')
+    }
+  })
+});
+const port = process.env.PORT || 8000;
+const env = process.env.NODE_ENV || 'production';
+// server.listen(port, err => {
+//   if (err) {
+//     return console.error(err);
+//   }
+//   console.info(`Server running on http://localhost:${port} [${env}]`);
+// });
 
 
 // react match routes.
@@ -121,5 +136,11 @@ app.use(function(err, req, res, next) {
     });
 });
 
+
+app.set('port', process.env.PORT || 8000);
+
+var server = app.listen(app.get('port'), function() {
+  console.log('Express server listening on port ' + server.address().port);
+});
 
 module.exports = app;
