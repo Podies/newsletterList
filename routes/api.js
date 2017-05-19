@@ -85,7 +85,8 @@ router.get('/handpicked', function(req, res) {
           console.log(err);
         }
         var newsletters = handpicked.map((item, i) => {
-          return item.newsletter;
+        	if(item.newsletter !== null)
+          	return item.newsletter;
         });
         res.json({handpicked: newsletters});
     })
