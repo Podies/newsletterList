@@ -1,32 +1,24 @@
 extends adminLayout
 
 block content
-  a.success.button(href='/admin/handpicked/add')  Add Handpicked
-  table
-    thead
-        tr
-          th(width='200') Id
-          |       
-          th(width='150') Name
-          |       
-          th(width='150') website
-          |       
-          th(width='150') Category
-          |       
-          th(width='150') Subcategory
-          th(width='100') DELETE
-    |   
-    tbody
-      for handpick in handpicked
-        tr
-          td #{handpick._id}
-          |       
-          td #{handpick.newsletter.name}
-          |       
-          td #{handpick.newsletter.website}
-          |       
-          td #{handpick.newsletter.category.name}
-          |       
-          td #{handpick.newsletter.subcategory.name}
-          td 
-            a.tiny.alert.button.removeHandPicked(data-id=handpick._id, href='#') Delete
+	a.success.button(href='/admin/handpicked/add')  Add Handpicked
+	table
+		thead
+				tr
+					th(width='200') Id
+					th(width='150') Name
+					th(width='150') website
+					th(width='150') Category
+					th(width='150') Subcategory
+					th(width='100') DELETE
+		tbody
+			for handpick in handpicked
+				if(handpick.newsletter)
+					tr
+					td #{handpick._id}
+					td #{handpick.newsletter.name}
+					td #{handpick.newsletter.website}
+					td #{handpick.newsletter.category.name}
+					td #{handpick.newsletter.subcategory.name}
+					td
+						a.tiny.alert.button.removeHandPicked(data-id=handpick._id, href='#') Delete

@@ -63,7 +63,7 @@ router.post('/add', function(req, res) {
     description: description,
     category: category,
     subcategory: subcategory,
-    website: website 
+    website: website
   });
   newNewsletter.save(function(err, savedNewsletter) {
     console.log(err, savedNewsletter);
@@ -74,6 +74,9 @@ router.post('/add', function(req, res) {
   // Delete Newsletter
 router.delete('/delete/:id', function(req,res) {
     Newsletter.remove({_id: req.params.id}, function(err) {
+    		HandPicked.remove({ newsletter: req.params.id }, function (err, con) {
+    			// console.log(err, 'check for error', con);
+    		});
         if(err) {
             console.log(err);
         }
@@ -116,7 +119,7 @@ router.post('/subcategories/add', function(req, res) {
   var newSubcategory = new Subcategory({ name: name, category: category });
 
   newSubcategory.save(function(err, savedSubcategory){
-    
+
     res.redirect('/admin/subcategories');
 
     Category.findOneAndUpdate(

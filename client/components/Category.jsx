@@ -65,7 +65,7 @@ class Category extends Component {
     return(
       <li className="category-tab" onMouseOver={this.changeSubmenuAlignment}>
         <Link to={`/${category.name}`} onClick={this.loadCategory} data-name={category.name} className="category-name">
-          <i className={`fa fa-${category.className}`} aria-hidden="true"></i>
+          <i className={`fa ${category.className}`} aria-hidden="true"></i>
           <p>{category.name}</p>
           { dropDownTriangle }
         </Link>
