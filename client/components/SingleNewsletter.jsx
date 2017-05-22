@@ -38,7 +38,7 @@ class SingleNewsletters extends Component {
                 <Link to={`/${category.name}`} className="tag-1" onClick={this.loadCategory} data-name={category.name}>{category.name}</Link>
                 <Link to={`/${category.name}/${subcategory.name}`} className="tag-2" onClick={this.loadSubCategory} data-category={category.name} data-subcategory={subcategory.name}>{subcategory.name}</Link>
               </div>
-              <a target="_blank" href={`http://${this.props.newsletter.website}`} className="col-wd-4 get-it-btn">Get It</a>
+              <a target="_blank" href={this.props.newsletter.website} className="col-wd-4 get-it-btn">Get It</a>
             </div>
           </div>
         </div>
