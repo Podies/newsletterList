@@ -82,7 +82,7 @@ class CategoryPage extends Component{
                                 	{item.category.name}
                                 </Link>
                               </div>
-                              <a target="_blank" href={`http://${item.website}`} className="col-wd-4 get-it-btn">Get It</a>
+                              <a target="_blank" href={item.website} className="col-wd-4 get-it-btn">Get It</a>
                             </div>
                           </div>
                         </div>
