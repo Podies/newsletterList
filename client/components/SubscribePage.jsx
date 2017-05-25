@@ -43,15 +43,17 @@ class SubscribePage extends Component {
 				<Header {...this.props}/>
 				<div className="header-margin">
 					<h2 className="heading-subscribe">Subscribe for updates on Newsletters.</h2>
-					{
-						this.props.categories.list.map((category, i) => (
-							<SubscribeGrid
-								key={i}
-								category={category}
-								toggleSubcategorySelect={this.toggleSubcategorySelect}
-							/>
-						))
-					}
+						<div className="category-grid">
+							{
+								this.props.categories.list.map((category, i) => (
+									<SubscribeGrid
+										key={i}
+										category={category}
+										toggleSubcategorySelect={this.toggleSubcategorySelect}
+									/>
+								))
+							}
+						</div>
 					<div className="email-subscription">
 							<input className="form-control email-input" ref="subscribeEmail" placeholder="Enter your email" type="email" name="search" id="search" />
 							<input className="form-control subscribe-btn" type="submit" onClick={this.subscribeSubmit} value="Subscribe" />

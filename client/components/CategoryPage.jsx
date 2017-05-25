@@ -99,6 +99,10 @@ class CategoryPage extends Component{
   }
 };
 
+
+CategoryPage.contextTypes = {
+	router: React.PropTypes.object,
+};
 CategoryPage.need = [() => actions.fetchCategory(), (params) => actions.fetchNewsletters(params)];
 
 export default CategoryPage;

@@ -164,7 +164,8 @@ router.get('/search/:searchTerm', function(req, res){
 		if (err) {
 			console.log(err);
 		}
-		res.json({search: data});
+		res.json({ search: data });
+		console.log(data);
 	});
 });
 

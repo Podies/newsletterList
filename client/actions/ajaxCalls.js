@@ -1,5 +1,5 @@
 import axios from 'axios';
-const endpoint = process.env.NODE_ENV == 'development' ? 'http://localhost:8080' : 'http://newsletterlist.xyz';
+const endpoint = process.env.NODE_ENV == 'production' ? 'http://newsletterlist.xyz' :  'http://localhost:8080';
 
 //fetch category
 const ajaxFetchCategory = (data) => {
@@ -20,7 +20,6 @@ const ajaxFetchNewsletters = (params) => {
   if(params.category && params.subcategory) {
     url = endpoint + '/api/subcategories/'+params.subcategory+'/newsletters';
   }
-
   return axios.get(url)
     .then((response) => {
       if (response.status !== 200) {
@@ -38,7 +37,6 @@ const ajaxFetchHandPicked = () => {
       if (response.status !== 200) {
         return Promise.reject('Newsletter Loading Failed');
       }
-      console.log(response.data);
       return response.data;
     });
 };

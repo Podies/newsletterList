@@ -32,11 +32,8 @@ class Category extends Component {
 
   changeSubmenuAlignment(e) {
     var ul = document.getElementById('submenu');
-
-    if(e.screenX > e.view.innerWidth / 2){
+    if(e.pageX > e.view.innerWidth / 2){
       this.setState({ subMenuClassName: 'sub-category-list-left'});
-    } else {
-      this.setState({ subMenuClassName: 'sub-category-list-right'});
     }
   }
 
