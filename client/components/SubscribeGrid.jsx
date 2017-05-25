@@ -44,12 +44,12 @@ class SubscribeGrid extends Component {
 		const categoryCheck = this.state.selectedSubCategories.length === this.props.category.subcategories.length;
 		return(
 			<div className="col-md-12 subscribe-category">
-				<div onClick={this.toggleAllSubCategories}>
+				<div className="category-top" onClick={this.toggleAllSubCategories}>
 					<input type="checkbox" name="category" readOnly checked={categoryCheck} />
 					<label htmlFor="category">{this.props.category.name}</label>
 				</div>
 				<br />
-				<div className="subcategory col-md-10">
+				<div className="subcategory col-md-12">
 					{
 						this.props.category.subcategories.map((subcategory, i) => {
 							return (

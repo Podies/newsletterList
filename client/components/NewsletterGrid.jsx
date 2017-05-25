@@ -15,8 +15,8 @@ class NewsletterGrid extends Component {
           this.props.newsletters.list.map((newsletter, i) => <SingleNewsletter key={i} newsletter={newsletter} dispatch={this.props.dispatch}/>)
         }
       </div>
-    )
+    );
   }
-};
+}
 
 export default NewsletterGrid;
